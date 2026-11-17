@@ -1,0 +1,486 @@
+{
+    "refreshedAt":  "2026-11-17T11:11:15.9563587+08:00",
+    "total":  80,
+    "items":  {
+                  "https://sklics.fudan.edu.cn/":  {
+                                                       "status":  0,
+                                                       "ms":  47081,
+                                                       "hash":  "",
+                                                       "changed":  false
+                                                   },
+                  "https://cs.nju.edu.cn/96/42/c56396a235074/pagem.htm":  {
+                                                                              "status":  200,
+                                                                              "ms":  132,
+                                                                              "hash":  "878c2fb6c6640acc49524b549eb73210c603bdfce4124d2f8f7436e819521360",
+                                                                              "changed":  false
+                                                                          },
+                  "https://www.sic.tsinghua.edu.cn/info/1040/1567.htm":  {
+                                                                             "status":  200,
+                                                                             "ms":  192,
+                                                                             "hash":  "71c78dba00b0fab83ee163319eaf1f23d98e17d13fdb9d60b43a4f709b529b3f",
+                                                                             "changed":  false
+                                                                         },
+                  "https://github.com/flashinfer-ai/flashinfer":  {
+                                                                      "status":  200,
+                                                                      "ms":  1490,
+                                                                      "hash":  "db9b6dfb974ef46e6c23fc002bc193b6db36696ca2dbb24b911e8f87785f8158",
+                                                                      "changed":  false
+                                                                  },
+                  "https://keysoftlab.nju.edu.cn/":  {
+                                                         "status":  200,
+                                                         "ms":  224,
+                                                         "hash":  "1bcae87c89420c89fc9b9f1c4cf919121df24bc283b551ef13c95ea37e2c3d37",
+                                                         "changed":  false
+                                                     },
+                  "https://ceca.pku.edu.cn/people/faculty/lgj/index.htm":  {
+                                                                               "status":  200,
+                                                                               "ms":  237,
+                                                                               "hash":  "0f60543a227e7cdefbef05543bb8c38b63ca0559f1496fac21e3f2767d34c2c3",
+                                                                               "changed":  false
+                                                                           },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/201612/t20161205_4716524.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  283,
+                                                                                                 "hash":  "b1589ba84ea85cf67719d905b4feff60d5e04e905c339387d1add89b69407d96",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://github.com/InternLM/lmdeploy":  {
+                                                               "status":  200,
+                                                               "ms":  1068,
+                                                               "hash":  "85b43a8e46e733dc2064d9d73c8d19ddb276b1a539e14f8f7f1535afd61317c4",
+                                                               "changed":  false
+                                                           },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496741.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  280,
+                                                                                                 "hash":  "e5c4d212ba261919dfadbb162d9936f0b224388e46d51902db9ee3ae238eae04",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://univ.ciciec.com/":  {
+                                                   "status":  200,
+                                                   "ms":  1620,
+                                                   "hash":  "06a155b93dcc05d9e8c3d764b9959901f6c71d0488cc52f7fbd7cd9b7e1cec79",
+                                                   "changed":  false
+                                               },
+                  "https://www.sic.tsinghua.edu.cn/zszp/zsxx/ssszs.htm":  {
+                                                                              "status":  200,
+                                                                              "ms":  160,
+                                                                              "hash":  "2ccf826313ee811e6fdc6f1314a7d1378c6cb5ef3ee73643440924643fb74f80",
+                                                                              "changed":  false
+                                                                          },
+                  "https://compiler.educg.net/":  {
+                                                      "status":  200,
+                                                      "ms":  178,
+                                                      "hash":  "fbdb0b485668881ab011a9268bba2e044abeb243a25a3b533667df9dc38426df",
+                                                      "changed":  false
+                                                  },
+                  "http://faculty.hust.edu.cn/jinhai/zh_CN/index.htm":  {
+                                                                            "status":  200,
+                                                                            "ms":  197,
+                                                                            "hash":  "6c58973990cd91ffdee6897fb6faaa4b4902dfc08ba90442a2273b9dc51d552e",
+                                                                            "changed":  false
+                                                                        },
+                  "https://www.shlab.org.cn/":  {
+                                                    "status":  200,
+                                                    "ms":  575,
+                                                    "hash":  "e14d4cbfed1dc6ac9c3218af5358e106564a59e7861c36dff4bc7b2ec836be18",
+                                                    "changed":  false
+                                                },
+                  "https://cse.sysu.edu.cn/teacher/LuYutong":  {
+                                                                   "status":  200,
+                                                                   "ms":  710,
+                                                                   "hash":  "ec879729bfeb74cd5202ab5b9d97c42d741ce92a40bd0aa39ecaa2bdb41bab2a",
+                                                                   "changed":  false
+                                                               },
+                  "https://www.ict.ac.cn/":  {
+                                                 "status":  200,
+                                                 "ms":  293,
+                                                 "hash":  "7ab2b1b5e85acb5a0316d5cd55674dc34a4076a0f128379213b795df0c2c14c3",
+                                                 "changed":  false
+                                             },
+                  "https://tech.gmw.cn/2025-11/07/content_38398478.htm":  {
+                                                                              "status":  200,
+                                                                              "ms":  258,
+                                                                              "hash":  "4265884feee98d0c0897be7d4faaa5ae4ee2f01c27fc2fcaa3f0dfcde6659e6d",
+                                                                              "changed":  false
+                                                                          },
+                  "https://www.buaa.edu.cn/info/1300/6075.htm":  {
+                                                                     "status":  200,
+                                                                     "ms":  232,
+                                                                     "hash":  "28df5d8bdad5d61d995f2e913a0444651aabf92fcd79de4fbd1bfc62ca395d30",
+                                                                     "changed":  false
+                                                                 },
+                  "https://cse.sysu.edu.cn/":  {
+                                                   "status":  200,
+                                                   "ms":  610,
+                                                   "hash":  "c4278da3aa6f94121d1fa92420def8081e19870afa7a5dced91a47a74cc7e4d4",
+                                                   "changed":  false
+                                               },
+                  "https://keysoftlab.nju.edu.cn/1571/list.htm":  {
+                                                                      "status":  200,
+                                                                      "ms":  152,
+                                                                      "hash":  "59aedbfc3df6adea362a672a45a314a5402b7bbee813b85b1e4a2ab500da9b39",
+                                                                      "changed":  false
+                                                                  },
+                  "https://flagos.io/":  {
+                                             "status":  200,
+                                             "ms":  502,
+                                             "hash":  "0879299eedbd2e73fada1816daa34a6b37d1412fdff85a033c55a81837e5e383",
+                                             "changed":  false
+                                         },
+                  "https://github.com/vllm-project/vllm":  {
+                                                               "status":  200,
+                                                               "ms":  1584,
+                                                               "hash":  "853e579e85e50559fccb6a3034d7f6fc8491ed539640648e16dfd28a154f49fc",
+                                                               "changed":  false
+                                                           },
+                  "https://www.cs.sjtu.edu.cn/jiaoshiml/lengjingwen.html":  {
+                                                                                "status":  200,
+                                                                                "ms":  197,
+                                                                                "hash":  "930abf4bdf78acceb9bd296aaeab4cb523f509e58e76936bb674950419eb2acc",
+                                                                                "changed":  false
+                                                                            },
+                  "https://ceca.pku.edu.cn/people/faculty/sgy/index.htm":  {
+                                                                               "status":  200,
+                                                                               "ms":  281,
+                                                                               "hash":  "241093fa6d93d6b54d4bc50a15a03acb67d8afa6b484bd5f3a8fb16f2daedbcc",
+                                                                               "changed":  false
+                                                                           },
+                  "https://cs.sjtu.edu.cn/cse/InstituteDetail.aspx?id=3":  {
+                                                                               "status":  200,
+                                                                               "ms":  168,
+                                                                               "hash":  "7c529587d0732200f23c4996d8c497f4cadcdd7744800fdfbdd2e2c2b85d1e2d",
+                                                                               "changed":  false
+                                                                           },
+                  "https://hpc.cs.tsinghua.edu.cn/":  {
+                                                          "status":  200,
+                                                          "ms":  421,
+                                                          "hash":  "a5a7d639e3626590ecc85cb64bcbba8db6c3973358aa734b811341df94004402",
+                                                          "changed":  false
+                                                      },
+                  "https://ceca.pku.edu.cn/people/faculty/ly/index.htm":  {
+                                                                              "status":  200,
+                                                                              "ms":  359,
+                                                                              "hash":  "e4fe93cab30e4c44df0eb189a911163201b2b2eac38050d01adcc0e7a878c388",
+                                                                              "changed":  false
+                                                                          },
+                  "https://github.com/Dao-AILab/flash-attention":  {
+                                                                       "status":  200,
+                                                                       "ms":  1467,
+                                                                       "hash":  "9fe5b71c8eb14e0a592fc874a24f19ebb58499371be903b8ac54255fe2b6b5da",
+                                                                       "changed":  false
+                                                                   },
+                  "https://www.cs.tsinghua.edu.cn/info/1107/3505.htm":  {
+                                                                            "status":  200,
+                                                                            "ms":  179,
+                                                                            "hash":  "b3ab0a4963ef8fa5a133c200ad42ba45d52df2120db9237121edecaa5af01910",
+                                                                            "changed":  false
+                                                                        },
+                  "https://github.com/FlagOpen/FlagGems":  {
+                                                               "status":  200,
+                                                               "ms":  2095,
+                                                               "hash":  "bcf64d874a1183ddfb23ac8217f2ee671403f15e672f3a6911e0ff80cd02c3a1",
+                                                               "changed":  false
+                                                           },
+                  "https://mlir.llvm.org/":  {
+                                                 "status":  200,
+                                                 "ms":  1403,
+                                                 "hash":  "27a65ae2ffdb3ccf2b10519ec1f85685d57838e51f6a7eaed4fa677e619d7a71",
+                                                 "changed":  false
+                                             },
+                  "https://github.com/NVIDIA/cutlass":  {
+                                                            "status":  200,
+                                                            "ms":  1549,
+                                                            "hash":  "774b8eee2dd07a8d3ab2c8fea5eb147f0e59afb7aac5628c155e99df513b9229",
+                                                            "changed":  false
+                                                        },
+                  "https://www.baai.ac.cn/":  {
+                                                  "status":  200,
+                                                  "ms":  516,
+                                                  "hash":  "0f63dd474d30145b425744a769b13459f5c233cedb74f66366068d593f648a38",
+                                                  "changed":  false
+                                              },
+                  "https://www.sic.tsinghua.edu.cn/info/1014/1807.htm":  {
+                                                                             "status":  200,
+                                                                             "ms":  181,
+                                                                             "hash":  "c09ca9366496315f63755e72a596c54e7119b72d21091b6f0840e576eb0d8459",
+                                                                             "changed":  false
+                                                                         },
+                  "https://ceca.pku.edu.cn/people/grad/index.htm":  {
+                                                                        "status":  200,
+                                                                        "ms":  178,
+                                                                        "hash":  "f22a9fd2c4bd7c0b2b25c3b9279647488c4b0bf22bb63993d2d0aebc3ff6242d",
+                                                                        "changed":  false
+                                                                    },
+                  "https://ceca.pku.edu.cn/people/faculty/wt/index.htm":  {
+                                                                              "status":  200,
+                                                                              "ms":  212,
+                                                                              "hash":  "68ebc8e13ee487580a271798dee9f27465a10ca2f6c640a55b650d6aadcb32c3",
+                                                                              "changed":  false
+                                                                          },
+                  "https://llvm.org/":  {
+                                            "status":  200,
+                                            "ms":  775,
+                                            "hash":  "2c967581aa10571a1dba9a6e1314acfff704db53535cdd1ca20804702136581c",
+                                            "changed":  false
+                                        },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/201708/t20170810_4841078.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  268,
+                                                                                                 "hash":  "a87687cf6f67779bcd24f749b554182efe2da9e1dabc0ab70b7eb637e4dde0b4",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://github.com/triton-lang/triton":  {
+                                                                "status":  200,
+                                                                "ms":  1502,
+                                                                "hash":  "08767d3132725e2d6cf1d61f12a63f5f10505a45f5f5f25c730a6d87ad9c9111",
+                                                                "changed":  false
+                                                            },
+                  "https://deeplink.org.cn/":  {
+                                                   "status":  200,
+                                                   "ms":  224,
+                                                   "hash":  "ce737d071737a92f67943628bc5708c55f3c94c1ba342f5de6e1d3180d4b127f",
+                                                   "changed":  false
+                                               },
+                  "https://ceca.pku.edu.cn/people/faculty/lyb/index.htm":  {
+                                                                               "status":  200,
+                                                                               "ms":  189,
+                                                                               "hash":  "feec0a27767a598c372f81ea7c86fd1e99ec154684fdaeb2903153b28e9a93fa",
+                                                                               "changed":  false
+                                                                           },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/201007/t20100705_2892775.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  376,
+                                                                                                 "hash":  "93ccc502f5ab15deab3f2bbc3d977a9d9a607a775a2be2840ad672410d39f4b0",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://www.asc-events.net/StudentChallenge/":  {
+                                                                       "status":  200,
+                                                                       "ms":  224,
+                                                                       "hash":  "8a550e0d54e6144e498ea33ab45007db17eefa0bedda4025f8d335dba845c382",
+                                                                       "changed":  false
+                                                                   },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496613.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  243,
+                                                                                                 "hash":  "640efff4fda049a39c12802b440df10488b7503b53b6e0de2c28ae2a87ba3f6a",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://www.cs.tsinghua.edu.cn/info/1107/5621.htm":  {
+                                                                            "status":  200,
+                                                                            "ms":  214,
+                                                                            "hash":  "a66e00b25ac294cf9e82978f1476b11f38952e1f3ecbaa705ed6dd37a5d9b341",
+                                                                            "changed":  false
+                                                                        },
+                  "https://tvm.apache.org/":  {
+                                                  "status":  200,
+                                                  "ms":  1535,
+                                                  "hash":  "1df53029ca7ac84629c60a0e4e4a8f364b5b8e38e383d9df7a63bc483ab078eb",
+                                                  "changed":  false
+                                              },
+                  "https://cs.nju.edu.cn/58/00/c2639a153600/pagem.htm":  {
+                                                                             "status":  200,
+                                                                             "ms":  172,
+                                                                             "hash":  "7218c4fa11afc7f6d681b8fc6238e02e58671e6be10c167722a2f9dffe7a4ff6",
+                                                                             "changed":  false
+                                                                         },
+                  "https://ic.seu.edu.cn/47780/list.htm":  {
+                                                               "status":  200,
+                                                               "ms":  182,
+                                                               "hash":  "fece71d225e733dcf5416e47098834bc30c498b20e6eacfdb2abd5d37fa6f1f1",
+                                                               "changed":  false
+                                                           },
+                  "https://hpc.cs.tsinghua.edu.cn/szdw.htm":  {
+                                                                  "status":  200,
+                                                                  "ms":  233,
+                                                                  "hash":  "cc3be4288b2f290cc09bc437759fab1e901111dc4e122f30b3b168308d6482b5",
+                                                                  "changed":  false
+                                                              },
+                  "https://github.com/pytorch/pytorch/tree/main/torch/_inductor":  {
+                                                                                       "status":  200,
+                                                                                       "ms":  1341,
+                                                                                       "hash":  "2e0c6eb67405d81e6ac96633d106342bf5ac8884bf9a585b557de61103a6e276",
+                                                                                       "changed":  false
+                                                                                   },
+                  "https://ceca.pku.edu.cn/":  {
+                                                   "status":  200,
+                                                   "ms":  228,
+                                                   "hash":  "e7a43433ee508dd231402b13d3db30c29dc868c1466ce8d004dd608dc7d3d618",
+                                                   "changed":  false
+                                               },
+                  "https://github.com/tile-ai/tilelang":  {
+                                                              "status":  200,
+                                                              "ms":  2038,
+                                                              "hash":  "862832de2e2bcbef2b486c4fb1f61f6f324be99fb1040b9f77e35e77a408d7ca",
+                                                              "changed":  false
+                                                          },
+                  "https://www.nscscc.com/":  {
+                                                  "status":  200,
+                                                  "ms":  1441,
+                                                  "hash":  "1c2dee2a4998cc9fa078c31d706f8a5b1ddbce01d7097f137e7ddb3bb34f25ad",
+                                                  "changed":  false
+                                              },
+                  "https://github.com/NVIDIA/cutlass/tree/main/include/cute":  {
+                                                                                   "status":  200,
+                                                                                   "ms":  965,
+                                                                                   "hash":  "873181a93d077bbd98d1924470f56c9e90711903e70d7ab2d15b75c748f2bf61",
+                                                                                   "changed":  false
+                                                                               },
+                  "https://www.hiascend.com/":  {
+                                                    "status":  0,
+                                                    "ms":  47064,
+                                                    "hash":  "",
+                                                    "changed":  false
+                                                },
+                  "https://scse.buaa.edu.cn/":  {
+                                                    "status":  0,
+                                                    "ms":  47060,
+                                                    "hash":  "",
+                                                    "changed":  false
+                                                },
+                  "http://www.nscc-gz.cn/":  {
+                                                 "status":  200,
+                                                 "ms":  148,
+                                                 "hash":  "c331c36dadbbbdd1b9048c421e3b24034bae1ac5a9ad8fe19f366f55eb3fbfce",
+                                                 "changed":  false
+                                             },
+                  "http://www.cs.hust.edu.cn/":  {
+                                                     "status":  200,
+                                                     "ms":  116,
+                                                     "hash":  "a57fc2b2fad11a75bbefecacfc5a0957d528451d4d105d2f38a1ec6480d2456c",
+                                                     "changed":  false
+                                                 },
+                  "https://cs.sjtu.edu.cn/szdw.html":  {
+                                                           "status":  200,
+                                                           "ms":  185,
+                                                           "hash":  "de4cec2929df57645bfa45e83f0c55393063d4ede9e1d7a52ee18a6412b43166",
+                                                           "changed":  false
+                                                       },
+                  "http://www.ict.ac.cn/yjsjy/zsxx/":  {
+                                                           "status":  200,
+                                                           "ms":  131,
+                                                           "hash":  "295ee645cbf945d7f192ecffad79c8344f0711e00d97d86e095de5ff49ca6a2b",
+                                                           "changed":  false
+                                                       },
+                  "http://faculty.hust.edu.cn/xfliao/zh_CN/index.htm":  {
+                                                                            "status":  200,
+                                                                            "ms":  132,
+                                                                            "hash":  "d9949f701719e74381d5f6b748015e70e60b031e3c5189de60e38162b8fafcd5",
+                                                                            "changed":  false
+                                                                        },
+                  "https://www.jos.org.cn/jos/article/abstract/mg013":  {
+                                                                            "status":  200,
+                                                                            "ms":  343,
+                                                                            "hash":  "e1d54170dc4d77090c4fd7b4c152f7886f1e8642b54a782c0fdbbab325b93053",
+                                                                            "changed":  false
+                                                                        },
+                  "https://www.cambricon.com/":  {
+                                                     "status":  200,
+                                                     "ms":  367,
+                                                     "hash":  "a6b4b373e6e1eda29791e42c1c21bd4ee09134b835657c799ad3c68769474dc7",
+                                                     "changed":  false
+                                                 },
+                  "https://www.sic.tsinghua.edu.cn/":  {
+                                                           "status":  200,
+                                                           "ms":  182,
+                                                           "hash":  "a69d64a2c333e4733c5c14a4a8f88e49f6ca0e25fade5d93683f3f3c698b2842",
+                                                           "changed":  false
+                                                       },
+                  "http://staff.ustc.edu.cn/~yuzhang/":  {
+                                                             "status":  200,
+                                                             "ms":  150,
+                                                             "hash":  "dc739e0012ef00ab2cb9268a3379089ed84f2edfc280758e1983f7f11a76f4d2",
+                                                             "changed":  false
+                                                         },
+                  "https://cs.ustc.edu.cn/zgj_23225/list.htm":  {
+                                                                    "status":  200,
+                                                                    "ms":  287,
+                                                                    "hash":  "3e2b6ded6298b7558cc4b1bbd660c40b2301dc11ef13c30f2da48fe0cee1a5f4",
+                                                                    "changed":  false
+                                                                },
+                  "http://www.ict.ac.cn/jssgk/zzjg/kyxt/clqxpzdsys/":  {
+                                                                           "status":  200,
+                                                                           "ms":  167,
+                                                                           "hash":  "6c711dce0303dd55006fa8b04257d18728b2360ed36cab86be1115ae77d98959",
+                                                                           "changed":  false
+                                                                       },
+                  "https://ic.seu.edu.cn/":  {
+                                                 "status":  200,
+                                                 "ms":  187,
+                                                 "hash":  "4e76c16456b4666059dd49e8c742f8a6cbc1630eb1c6cde749b5cc5a50dd6edc",
+                                                 "changed":  false
+                                             },
+                  "https://cs.nju.edu.cn/a1/ca/c2639a238026/pagem.htm":  {
+                                                                             "status":  200,
+                                                                             "ms":  214,
+                                                                             "hash":  "22d457222840ff83dd19540268566bc260d3a4e1073fe3e9183583ddf6e54376",
+                                                                             "changed":  false
+                                                                         },
+                  "https://www.tsinghua.edu.cn/info/1329/120110.htm":  {
+                                                                           "status":  200,
+                                                                           "ms":  162,
+                                                                           "hash":  "f7a78edf599308b17ecb7f37dc1abae0488a3102234b060cb036274c1e965b66",
+                                                                           "changed":  false
+                                                                       },
+                  "https://cs.ustc.edu.cn/":  {
+                                                  "status":  200,
+                                                  "ms":  194,
+                                                  "hash":  "029a218f4fad8dd7364de659429ccfc71430165eb6fa94d1ad1057194a7f65c5",
+                                                  "changed":  false
+                                              },
+                  "https://github.com/sgl-project/sglang":  {
+                                                                "status":  200,
+                                                                "ms":  1488,
+                                                                "hash":  "519bf27b88f7f6635c58f2ec07e65811c14f297679abde95d3ca8bcca4257252",
+                                                                "changed":  false
+                                                            },
+                  "https://cscc.educg.net/":  {
+                                                  "status":  200,
+                                                  "ms":  200,
+                                                  "hash":  "fbdb0b485668881ab011a9268bba2e044abeb243a25a3b533667df9dc38426df",
+                                                  "changed":  false
+                                              },
+                  "https://www.cs.tsinghua.edu.cn/info/1107/3513.htm":  {
+                                                                            "status":  200,
+                                                                            "ms":  185,
+                                                                            "hash":  "908520d3e573172ee31354924025157cf6c07dad6e30693837e8a75dce7d8273",
+                                                                            "changed":  false
+                                                                        },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/201810/t20181029_5151252.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  230,
+                                                                                                 "hash":  "ab075bd9242f2490dd132dcbc0ae0f0d75a9d35ff2d4c6d93e680e7c185a3227",
+                                                                                                 "changed":  false
+                                                                                             },
+                  "https://github.com/buddy-compiler/buddy-mlir":  {
+                                                                       "status":  200,
+                                                                       "ms":  1106,
+                                                                       "hash":  "e6957b73f062254b4da11e26d4b3c0187bb22953b8b1e3cb6a9bbf44207e11fd",
+                                                                       "changed":  false
+                                                                   },
+                  "https://github.com/NVIDIA/cub":  {
+                                                        "status":  200,
+                                                        "ms":  1312,
+                                                        "hash":  "8ecd32f5043cd7f5c01db7093dc0b8443dba92ae0ff2fbc5cba1aab6a2b9e998",
+                                                        "changed":  false
+                                                    },
+                  "https://ic.seu.edu.cn/shilongxing/main.htm":  {
+                                                                     "status":  200,
+                                                                     "ms":  142,
+                                                                     "hash":  "5ecf66d65ce62f647a06b12bcfe9c0429e788256a0b3df015db67653d1590299",
+                                                                     "changed":  false
+                                                                 },
+                  "http://www.cs.hust.edu.cn/szdw/jsml/axmpyszmlb.htm":  {
+                                                                             "status":  200,
+                                                                             "ms":  101,
+                                                                             "hash":  "7d8bb10e659f0cda3a762056edbd6fa6f9c1ddcc3784874941a3f06c3e0d6391",
+                                                                             "changed":  false
+                                                                         },
+                  "https://www.ict.ac.cn/sourcedb/cn/jssrck/201612/t20161205_4716420.html":  {
+                                                                                                 "status":  200,
+                                                                                                 "ms":  371,
+                                                                                                 "hash":  "693dee802383a359967b92633807def56ac4d0bd9860750916bf8769c48d5a2e",
+                                                                                                 "changed":  false
+                                                                                             }
+              }
+}
