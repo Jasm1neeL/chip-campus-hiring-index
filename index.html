@@ -1,0 +1,1612 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a0c">
+<title>芯片目标实验室 / 顶会 / 赛事合辑</title>
+<meta name="description" content="芯片方向四个实习/校招岗位（大模型推理、高性能计算库、CUDA 开发、编译器）的目标实验室、导师、顶会、赛事与开源社区 sourcing 清单（含每周自动刷新）。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23080a0c'/%3E%3Cpath d='M26 68V32h10l14 22 14-22h10v36H64V48L50 70 36 48v20z' fill='%234fd8c2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#080a0c; --paper:#080a0c; --paper-2:#0d1116;
+  --panel:#0d1216; --panel-2:#111820;
+  --ink:#eef3f6; --ink2:#b0bcc7; --muted:#7d8a96;
+  --line:rgba(255,255,255,.075); --line-2:rgba(255,255,255,.16);
+  --accent:#4fd8c2; --accent-soft:rgba(79,216,194,.12);
+  --brand:#4fd8c2; --brand-soft:rgba(79,216,194,.13);
+  --ok:#4fd8c2; --ok-soft:rgba(79,216,194,.12);
+  --mid:#e8b45c; --mid-soft:rgba(232,180,92,.13);
+  --warn:#ff6f6f; --warn-soft:rgba(255,111,111,.13);
+  --dark:#05070a;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --mono:"SF Mono",ui-monospace,"Cascadia Mono","Roboto Mono",Consolas,"Liberation Mono",monospace;
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",SimSun,serif;
+  --radius:14px;
+  --shadow-lg:0 40px 120px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:
+    radial-gradient(1200px 620px at 84% -12%,rgba(79,216,194,.10),transparent 62%),
+    radial-gradient(900px 520px at 2% -8%,rgba(86,120,255,.08),transparent 60%),
+    #080a0c;
+  color:var(--ink);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.65;
+  padding-bottom:70px;
+}
+body::after{content:"";position:fixed;left:0;right:0;top:0;height:1px;z-index:60;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(79,216,194,.55),transparent)}
+::selection{background:rgba(79,216,194,.28);color:#fff}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#080a0c}
+::-webkit-scrollbar-thumb{background:#1b242c;border-radius:99px;border:3px solid #080a0c}
+*{scrollbar-color:#1b242c #080a0c;scrollbar-width:thin}
+
+/* ---------- topbar ---------- */
+.topbar{position:sticky;top:0;z-index:50;
+  background:rgba(8,10,12,.78);
+  backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);
+  border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:1240px;height:60px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:14px;}
+.brand{display:flex;align-items:center;gap:11px;white-space:nowrap}
+.brand-mark{width:30px;height:30px;border-radius:8px;flex:none;color:var(--accent);
+  background:linear-gradient(150deg,rgba(79,216,194,.2),rgba(79,216,194,.03));
+  border:1px solid rgba(79,216,194,.34);
+  font-size:14px;display:grid;place-items:center;letter-spacing:0;
+  box-shadow:inset 0 0 14px rgba(79,216,194,.14);}
+.brand .bt{font-size:13px;font-weight:650;letter-spacing:.02em;line-height:1.2}
+.brand small{display:block;font-family:var(--mono);font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.2em;margin-top:4px}
+.search{margin-left:auto;position:relative;flex:1 1 260px;max-width:340px;min-width:160px}
+.search input{width:100%;height:34px;padding:0 12px 0 32px;border-radius:8px;border:1px solid var(--line);
+  background:rgba(255,255,255,.035);font-size:12.5px;color:var(--ink);outline:none;transition:.16s;font-family:var(--sans)}
+.search input::placeholder{color:#8794a1}
+.search input:focus{border-color:rgba(79,216,194,.55);box-shadow:0 0 0 3px rgba(79,216,194,.1);background:rgba(255,255,255,.055)}
+.search .ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;line-height:1}
+.ghost-btn{border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--ink2);height:30px;padding:0 12px;border-radius:7px;
+  font-size:11.5px;font-weight:600;white-space:nowrap;transition:.15s}
+.ghost-btn:hover{border-color:var(--line-2);background:rgba(255,255,255,.06);color:var(--ink)}
+.freshness{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;
+  color:var(--ink2);white-space:nowrap;min-width:0;max-width:330px}
+.freshness .d{width:6px;height:6px;border-radius:50%;background:#54606b;flex:none}
+.freshness.live .d{background:var(--accent);box-shadow:0 0 8px rgba(79,216,194,.7)}
+.freshness.stale .d{background:var(--mid);box-shadow:0 0 8px rgba(232,180,92,.6)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:70px 24px 46px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(120% 105% at 18% 0%,#000 0%,rgba(0,0,0,.55) 42%,transparent 74%);
+  mask-image:radial-gradient(120% 105% at 18% 0%,#000 0%,rgba(0,0,0,.55) 42%,transparent 74%);}
+.hero-inner{position:relative;z-index:1;max-width:1192px;margin:0 auto}
+.kicker{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:24px;flex-wrap:wrap}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;
+  animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,216,194,.5)}70%{box-shadow:0 0 0 9px rgba(79,216,194,0)}100%{box-shadow:0 0 0 0 rgba(79,216,194,0)}}
+h1{margin:0 0 22px;font-family:var(--sans);font-weight:700;font-size:clamp(34px,4.6vw,62px);
+  line-height:1.1;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.hero p.lead{margin:0;color:var(--ink2);max-width:100%;font-size:14.5px;line-height:1.95}
+.hero p.lead b{font-weight:650;color:var(--ink)}
+
+.pillhead{display:flex;align-items:baseline;gap:12px;margin-top:44px;padding-bottom:10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.pillhead span{letter-spacing:.02em;text-transform:none;font-family:var(--sans);font-size:11.5px;color:#7d8a96}
+
+.pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,0))}
+.pill{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:15px;row-gap:3px;
+  align-items:center;text-align:left;padding:18px 20px 17px;background:none;border:0;
+  border-right:1px solid var(--line);position:relative;transition:background .18s ease}
+.pill:last-child{border-right:0}
+.pill .idx{grid-row:1/3;font-family:var(--mono);font-size:24px;font-weight:400;line-height:1;
+  letter-spacing:-.03em;color:rgba(79,216,194,.42);transition:color .18s ease;font-variant-numeric:tabular-nums}
+.pill .plabel{font-size:14px;font-weight:650;color:var(--ink);line-height:1.3;letter-spacing:.01em}
+.pill .pcount{font-family:var(--mono);font-size:9px;color:#8b98a4;letter-spacing:.08em}
+.pill:hover{background:rgba(255,255,255,.035)}
+.pill:hover .idx{color:var(--accent)}
+.pill.active{background:linear-gradient(180deg,rgba(79,216,194,.15),rgba(79,216,194,.02))}
+.pill.active::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent)}
+.pill.active .idx{color:var(--accent)}
+.pill.active .plabel{color:#fff}
+.pill.active .pcount{color:#8fc9bf}
+
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:34px;
+  border-top:1px solid var(--line);padding-top:22px}
+.stat{padding:0 24px;border-left:1px solid var(--line);min-width:0}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--mono);font-weight:400;font-size:30px;line-height:1.1;
+  color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:7px;font-family:var(--mono);font-size:9px;color:var(--muted);
+  letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- tabs ---------- */
+.tabs-wrap{background:rgba(8,10,12,.86);border-bottom:1px solid var(--line);
+  position:sticky;top:61px;z-index:40;
+  backdrop-filter:saturate(150%) blur(18px);-webkit-backdrop-filter:saturate(150%) blur(18px)}
+.tabs{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;gap:32px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:none;padding:15px 0 13px;font-size:12.5px;font-weight:600;color:var(--muted);
+  border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
+.tab:hover{color:var(--ink2)}
+.tab.active{color:var(--ink);border-bottom-color:var(--accent)}
+.tab .n{font-family:var(--mono);font-size:9px;background:rgba(255,255,255,.06);color:#9aa6b1;
+  border-radius:3px;padding:1px 5px;margin-left:7px;font-weight:500;vertical-align:1px}
+.tab.active .n{background:var(--accent-soft);color:var(--accent)}
+
+main{max-width:1240px;margin:0 auto;padding:32px 24px 60px}
+.view{display:none}
+.view.active{display:block}
+
+.section-note{border-left:1px solid rgba(79,216,194,.5);padding:2px 0 2px 18px;margin:0 0 24px;
+  font-size:12.5px;color:var(--ink2);line-height:1.9}
+.section-note b{color:var(--ink);font-weight:650}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;padding:12px 16px;
+  background:rgba(255,255,255,.022);border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+.fgroup{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.fgroup + .fgroup{border-left:1px solid var(--line);padding-left:20px}
+.flabel{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.14em;margin-right:6px;text-transform:uppercase}
+.chip{border:1px solid transparent;background:transparent;color:var(--ink2);padding:5px 10px;
+  border-radius:6px;font-size:12px;font-weight:600;transition:.14s;white-space:nowrap}
+.chip:hover{background:rgba(255,255,255,.055);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04110e;border-color:var(--accent)}
+
+.resultbar{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  margin:0 2px 16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  color:var(--muted);text-transform:uppercase}
+.resultbar .rhint{color:var(--muted);text-transform:none;letter-spacing:.03em}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.006));
+  border:1px solid var(--line);border-radius:14px;
+  padding:20px 20px 15px;display:flex;flex-direction:column;gap:12px;position:relative;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-3px);border-color:rgba(79,216,194,.32);
+  box-shadow:0 22px 55px rgba(0,0,0,.55),0 0 0 1px rgba(79,216,194,.06)}
+.card::before,.card::after{content:"";position:absolute;width:9px;height:9px;opacity:0;
+  transition:opacity .2s ease;pointer-events:none}
+.card::before{top:9px;left:9px;border-top:1px solid var(--accent);border-left:1px solid var(--accent)}
+.card::after{bottom:9px;right:9px;border-bottom:1px solid var(--accent);border-right:1px solid var(--accent)}
+.card:hover::before,.card:hover::after{opacity:.5}
+.card.negative{opacity:.6}
+.card.negative:hover{opacity:.85}
+.card-top{display:flex;align-items:flex-start;gap:8px}
+.card h3{margin:0;font-size:15.5px;letter-spacing:.005em;font-weight:650;line-height:1.4;color:var(--ink)}
+.dot{width:6px;height:6px;border-radius:50%;flex:none;margin-top:7px}
+.dot.ok{background:var(--accent);box-shadow:0 0 8px rgba(79,216,194,.6)}
+.dot.mid{background:var(--mid);box-shadow:0 0 8px rgba(232,180,92,.5)}
+.dot.warn{background:var(--warn);box-shadow:0 0 8px rgba(255,111,111,.5)}
+.unit{margin:0;font-size:11.5px;color:var(--muted);line-height:1.55}
+.badge{font-family:var(--mono);font-size:8px;font-weight:500;letter-spacing:.08em;padding:3px 7px;
+  border-radius:4px;white-space:nowrap;border:1px solid transparent}
+.badge.ok{background:var(--ok-soft);color:var(--ok);border-color:rgba(79,216,194,.28)}
+.badge.mid{background:var(--mid-soft);color:var(--mid);border-color:rgba(232,180,92,.28)}
+.badge.warn{background:var(--warn-soft);color:var(--warn);border-color:rgba(255,111,111,.28)}
+
+.people{margin:0;font-size:13px;color:var(--ink);font-weight:600;line-height:2;overflow-wrap:anywhere}
+.people a{color:var(--ink);border-bottom:1px dashed rgba(255,255,255,.22)}
+.people a:hover{color:var(--accent);border-bottom-color:rgba(79,216,194,.6)}
+.people .sep{color:#7d8a96;font-weight:400;margin:0 4px}
+
+.why{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.78;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:10.5px;background:rgba(255,255,255,.055);color:#a9b4be;border-radius:4px;padding:2px 7px;
+  font-weight:600;line-height:1.7}
+.tag.dir{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.055);color:#bcc7d1;font-weight:600}
+.tag .swatch{width:6px;height:6px;border-radius:50%;flex:none;display:inline-block;box-shadow:0 0 6px rgba(0,0,0,.4)}
+.tag.neg{background:var(--warn-soft);color:var(--warn)}
+
+.card-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.btn{border:1px solid var(--line-2);background:rgba(255,255,255,.02);color:var(--ink2);height:29px;padding:0 11px;
+  border-radius:7px;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px;
+  transition:.15s;text-decoration:none}
+.btn:hover{border-color:rgba(79,216,194,.45);color:var(--ink);background:rgba(255,255,255,.05);text-decoration:none}
+.btn.primary{background:rgba(79,216,194,.1);border-color:rgba(79,216,194,.45);color:#9ff0e1;font-weight:650;box-shadow:inset 0 0 12px rgba(79,216,194,.06)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#04110e;box-shadow:0 0 18px rgba(79,216,194,.35)}
+.btn.sm{height:25px;padding:0 9px;font-size:11px}
+.track{margin-left:auto;border:1px solid var(--line);border-radius:7px;height:29px;padding:0 5px;
+  font-size:10.5px;background:#0b1014;color:var(--ink2);font-weight:600;outline:none;max-width:92px;
+  font-family:var(--mono)}
+.track.s-et{background:rgba(232,180,92,.12);color:#e8b45c;border-color:rgba(232,180,92,.32)}
+.track.s-rp{background:rgba(79,216,194,.11);color:#7fe9d8;border-color:rgba(79,216,194,.32)}
+.track.s-mt{background:rgba(120,170,255,.12);color:#9dc0ff;border-color:rgba(120,170,255,.32)}
+.track.s-dr{background:rgba(255,255,255,.05);color:var(--muted);border-color:var(--line)}
+
+/* ---------- live dots on links ---------- */
+span.live{display:inline-block;width:5px;height:5px;border-radius:50%;margin-left:5px;vertical-align:middle;background:#4b5661}
+span.live.ok{background:var(--accent);box-shadow:0 0 6px rgba(79,216,194,.6)}
+span.live.bad{background:var(--warn);box-shadow:0 0 6px rgba(255,111,111,.6)}
+span.live.chg{background:var(--mid);box-shadow:0 0 6px rgba(232,180,92,.6)}
+
+/* ---------- modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(3,5,7,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  z-index:100;display:none;align-items:center;justify-content:center;padding:22px}
+.modal-bg.on{display:flex}
+.modal{background:#0a0e12;border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:820px;width:100%;
+  max-height:88vh;overflow:auto;box-shadow:var(--shadow-lg);animation:pop .22s ease-out}
+@keyframes pop{from{transform:translateY(12px) scale(.99);opacity:0}to{transform:none;opacity:1}}
+.modal-head{padding:26px 30px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;
+  background:#0a0e12;z-index:2}
+.modal-head h3{margin:0 0 6px;font-family:var(--sans);font-size:25px;font-weight:650;letter-spacing:-.01em;
+  padding-right:44px;line-height:1.25;color:var(--ink)}
+.modal-head .unit{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em}
+.modal-close{position:absolute;right:20px;top:20px;border:1px solid var(--line);background:transparent;
+  width:30px;height:30px;border-radius:50%;font-size:13px;color:var(--muted);line-height:1}
+.modal-close:hover{background:rgba(255,255,255,.06);color:var(--ink);border-color:var(--line-2)}
+.modal-body{padding:24px 30px 32px;display:flex;flex-direction:column;gap:26px}
+.mblock h4{margin:0 0 12px;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:#8b98a4;font-weight:500;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.mblock p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.9}
+
+.big-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.big-link{border:1px solid var(--line);border-radius:11px;padding:14px 16px;display:block;
+  transition:.16s;background:rgba(255,255,255,.022);text-decoration:none}
+.big-link:hover{border-color:rgba(79,216,194,.4);background:rgba(255,255,255,.045)}
+.big-link .k{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;display:block;margin-bottom:5px}
+.big-link .v{font-size:13.5px;font-weight:650;color:var(--ink);line-height:1.5;display:block}
+.big-link .u{font-family:var(--mono);font-size:9px;color:#8794a1;word-break:break-all;margin-top:5px;display:block;line-height:1.55}
+.big-link.brand{background:linear-gradient(155deg,rgba(79,216,194,.11),rgba(79,216,194,.015));
+  border-color:rgba(79,216,194,.3)}
+.big-link.team{background:linear-gradient(155deg,rgba(120,170,255,.1),rgba(120,170,255,.015));
+  border-color:rgba(120,170,255,.26)}
+.hint{font-size:11.5px;color:var(--muted);margin-top:9px;line-height:1.75}
+
+.plist{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:11px;overflow:hidden;
+  background:rgba(255,255,255,.015)}
+.prow{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);
+  background:transparent;transition:.14s;text-decoration:none}
+.prow:last-child{border-bottom:0}
+.prow:hover{background:rgba(255,255,255,.045);text-decoration:none}
+.prow .pn{font-size:13.5px;font-weight:650;color:var(--ink);white-space:nowrap}
+.prow:hover .pn{color:var(--accent)}
+.prow .pr{font-size:11px;color:var(--muted);margin-left:auto;text-align:right;line-height:1.5}
+.prow .go{font-size:11px;color:#7d8a96;flex:none}
+.prow:hover .go{color:var(--accent)}
+
+.links{display:flex;flex-direction:column;gap:8px}
+.link-row{display:flex;align-items:center;gap:8px;font-size:12.5px;flex-wrap:wrap}
+.link-row .lk{color:var(--muted);font-family:var(--mono);font-size:9px;word-break:break-all}
+.recheck{display:flex;flex-wrap:wrap;gap:8px}
+.probe-out{font-family:var(--mono);font-size:9.5px;color:var(--muted);font-weight:500}
+
+/* ---------- combos ---------- */
+.combo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.combo{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.006));
+  border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;transition:.2s}
+.combo:hover{border-color:rgba(79,216,194,.28)}
+.combo .num{font-family:var(--mono);font-size:22px;font-weight:400;line-height:1;color:var(--accent);
+  letter-spacing:.08em;margin-bottom:12px}
+.combo h3{margin:0 0 4px;font-size:17px;font-weight:650;letter-spacing:0;color:var(--ink)}
+.combo .sub{font-family:var(--mono);font-size:8.5px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px}
+.combo ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.combo li{display:flex;gap:10px;font-size:12.5px;color:var(--ink2);line-height:1.7}
+.combo li .k{flex:none;width:44px;font-family:var(--mono);font-size:8.5px;font-weight:500;color:var(--muted);
+  letter-spacing:.1em;padding-top:4px;text-transform:uppercase}
+.combo .cta{margin-top:20px}
+.combo .cta .btn{width:100%;justify-content:center}
+
+/* ---------- OSS rows ---------- */
+.panel{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:12px;padding:4px 0;overflow:hidden;margin-bottom:16px}
+.panel .phead{padding:15px 20px 9px;font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);font-weight:500}
+.row{display:flex;gap:16px;padding:13px 20px;border-top:1px solid var(--line);align-items:baseline;transition:background .14s}
+.row:hover{background:rgba(255,255,255,.035)}
+.row .name{font-weight:650;font-size:13px;min-width:150px}
+.row .name a{color:var(--ink)}
+.row .name a:hover{color:var(--accent)}
+.row .desc{font-size:12.5px;color:#93a0ac;flex:1;line-height:1.7}
+
+/* ---------- conferences ---------- */
+.conf-group{margin-bottom:28px}
+.conf-group h3{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 12px;font-weight:500}
+.conf-items{display:flex;flex-wrap:wrap;gap:8px}
+.conf-item{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:7px;padding:8px 12px;
+  font-size:12.5px;font-weight:650;display:inline-flex;gap:7px;align-items:center;color:var(--ink);transition:.15s}
+.conf-item:hover{border-color:rgba(79,216,194,.4);color:var(--accent);background:rgba(79,216,194,.06);text-decoration:none}
+.conf-item small{color:var(--muted);font-weight:400;font-size:9px;font-family:var(--mono)}
+
+/* ---------- student roster ---------- */
+.stu-wrap{border:1px solid var(--line);border-radius:14px;overflow-x:auto;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.004))}
+.stu-table{width:100%;border-collapse:collapse;min-width:780px;font-size:13px}
+.stu-table thead th{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:#8b98a4;font-weight:500;text-align:left;padding:13px 18px;border-bottom:1px solid var(--line-2);
+  background:rgba(255,255,255,.025);white-space:nowrap}
+.stu-table tbody td{padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+.stu-table tbody tr:last-child td{border-bottom:0}
+.stu-table tbody tr{transition:background .14s}
+.stu-table tbody tr:hover{background:rgba(79,216,194,.045)}
+.stu-name{font-weight:650;color:var(--ink);font-size:13.5px;display:inline-flex;align-items:center;min-height:24px}
+.stu-name:hover{color:var(--accent)}
+.stu-en{display:block;font-family:var(--mono);font-size:9px;color:#8794a1;margin-top:3px;letter-spacing:.03em}
+.stu-org{color:var(--ink2);font-size:12.5px}
+.stu-org span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.stu-adv{display:inline-flex;align-items:center;min-height:24px;border:0;background:none;padding:2px 0;color:var(--ink);font-weight:600;font-size:12.5px;
+  border-bottom:1px dashed rgba(255,255,255,.2)}
+.stu-adv:hover{color:var(--accent);border-bottom-color:rgba(79,216,194,.6)}
+.stu-status{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;
+  color:#9ff0e1;background:rgba(79,216,194,.1);border:1px solid rgba(79,216,194,.26);
+  border-radius:4px;padding:2px 7px;white-space:nowrap}
+.stu-status.ms{color:#9dc0ff;background:rgba(120,170,255,.1);border-color:rgba(120,170,255,.26)}
+.stu-year{display:block;font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:5px}
+.stu-contact{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.stu-contact a{display:inline-flex;align-items:center;min-height:24px;padding:2px 0;font-family:var(--mono);font-size:11px;color:var(--accent);word-break:break-all;
+  border-bottom:1px dotted rgba(79,216,194,.35);line-height:1.5}
+.stu-contact a:hover{border-bottom-style:solid}
+.stu-contact .gh::before{content:"GH";color:#8794a1;font-size:8.5px;letter-spacing:.1em;margin-right:5px}
+.stu-contact .em::before{content:"@";color:#8794a1;font-size:10px;margin-right:5px}
+.stu-none{color:#6f7c88;font-size:11.5px;font-family:var(--mono)}
+.stu-src{font-family:var(--mono);font-size:9.5px;color:#8794a1;line-height:1.5;display:inline-flex;align-items:center;min-height:24px}
+.stu-src:hover{color:var(--accent)}
+@media (max-width:720px){
+  .stu-table{min-width:680px}
+  .stu-table thead th,.stu-table tbody td{padding:12px 13px}
+}
+
+/* ---------- footer ---------- */
+.foot{max-width:1240px;margin:24px auto 0;padding:26px 24px 8px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:11.5px;line-height:2}
+.foot p{margin:0 0 8px}
+.foot b{color:var(--ink2);font-weight:650}
+.foot code{font-family:var(--mono);font-size:10px;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:3px;color:var(--ink2)}
+.empty{text-align:center;padding:70px 20px;color:var(--muted);font-size:13px;letter-spacing:.06em}
+
+@media (max-width:1080px){
+  .freshness{display:none}
+}
+@media (max-width:860px){
+  .fgroup + .fgroup{border-left:0;padding-left:0}
+  .stats{grid-template-columns:1fr 1fr;gap:22px 0}
+  .stat{padding:0 16px}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+}
+@media (max-width:720px){
+  .topbar-inner{height:54px;padding:0 14px;gap:6px}
+  .brand small{display:none}
+  .brand{gap:8px}
+  .brand .bt{font-size:12.5px}
+  .hide-m{display:none}
+  .search{max-width:none;min-width:0}
+  .ghost-btn{padding:0 8px;font-size:11px}
+  .hero{padding:44px 16px 32px}
+  .hero::before{background-size:54px 54px}
+  .kicker{font-size:8.5px;margin-bottom:18px;letter-spacing:.12em}
+  h1{font-size:27px;letter-spacing:-.01em;margin-bottom:16px;white-space:normal}
+  .hero p.lead{font-size:13px;line-height:1.85}
+  .pillhead{margin-top:30px}
+  .pills{grid-template-columns:1fr 1fr}
+  .pill{border-bottom:1px solid var(--line);padding:15px 14px}
+  .pill:nth-child(2n){border-right:0}
+  .pill:nth-child(3),.pill:nth-child(4){border-bottom:0}
+  .pill .idx{font-size:19px}
+  .pill .plabel{font-size:13px}
+  .stats{margin-top:26px;padding-top:18px}
+  .stat{padding:0 14px}
+  .stat b{font-size:24px}
+  .tabs-wrap{top:55px}
+  .tabs{gap:22px;padding:0 16px}
+  .tab{font-size:12px;padding:12px 0 10px}
+  main{padding:20px 16px 50px}
+  .grid{grid-template-columns:1fr}
+  .big-links{grid-template-columns:1fr}
+  .modal{max-height:92vh;border-radius:14px}
+  .modal-head{padding:22px 20px 16px}
+  .modal-head h3{font-size:21px}
+  .modal-body{padding:20px 20px 26px;gap:22px}
+  .row{flex-direction:column;gap:3px}
+  .row .name{min-width:0}
+  .resultbar{flex-direction:column;gap:3px}
+  .foot{padding:22px 16px 8px}
+}
+@media print{
+  :root{--paper:#fff;--panel:#fff;--panel-2:#fafafa;--ink:#111;--ink2:#333;--muted:#666;
+        --line:#ddd;--line-2:#bbb;--accent:#b23a2b;--accent-soft:#f4e4df}
+  body{background:#fff!important;color:#111;padding:0}
+  body::after,.hero::before,.live-dot{display:none}
+  .topbar,.tabs-wrap,.hero,.filters,.card-foot,.ghost-btn,.search,.resultbar{display:none!important}
+  .card,.combo,.panel{background:#fff!important;box-shadow:none;border-color:#ddd;break-inside:avoid}
+  .card h3,.people a,.row .name a{color:#111}
+  .view{display:block!important}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">芯</div>
+      <div class="bt">芯片校招人才索引<small>CHIP CAMPUS HIRING INDEX</small></div>
+    </div>
+    <div class="search">
+      <span class="ico">⌕</span>
+      <input id="q" type="search" placeholder="搜机构 / 导师 / 方向 / 学生…" autocomplete="off">
+    </div>
+    <div class="freshness" id="freshness" title="每周一 10:00 自动检测所有官网链接">
+      <span class="d"></span><span id="freshText">检查刷新状态…</span>
+    </div>
+    <button class="ghost-btn hide-m" id="btnCopy">复制清单</button>
+    <button class="ghost-btn" id="btnCsv">导出 CSV</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span class="live-dot"></span>核验于 2026-11-16 · 每周一 10:00 自动复核</div>
+    <h1>芯片目标实验室 / 顶会 / 赛事合辑</h1>
+    
+    <div class="pillhead">岗位索引<span>点一个方向，下方机构即时筛选</span></div>
+    <div class="pills" id="heroPills">
+      <button class="pill" data-post="p1">
+        <span class="idx">01</span>
+        <span class="plabel">大模型推理</span>
+        <span class="pcount" data-pcount="p1">— 个目标机构</span>
+      </button>
+      <button class="pill" data-post="p2">
+        <span class="idx">02</span>
+        <span class="plabel">高性能计算</span>
+        <span class="pcount" data-pcount="p2">— 个目标机构</span>
+      </button>
+      <button class="pill" data-post="p3">
+        <span class="idx">03</span>
+        <span class="plabel">CUDA 开发</span>
+        <span class="pcount" data-pcount="p3">— 个目标机构</span>
+      </button>
+      <button class="pill" data-post="p4">
+        <span class="idx">04</span>
+        <span class="plabel">编译器</span>
+        <span class="pcount" data-pcount="p4">— 个目标机构</span>
+      </button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="s1">—</b><span>目标机构 / 团队</span></div>
+      <div class="stat"><b id="s2">—</b><span>导师个人主页</span></div>
+      <div class="stat"><b id="s3">—</b><span>在读学生（已核验）</span></div>
+      <div class="stat"><b id="s4">—</b><span>顶会 · 顶刊</span></div>
+      <div class="stat"><b id="s5">—</b><span>赛事 · 开源项目</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="tabs-wrap">
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="orgs">机构库<span class="n" id="n-orgs">0</span></button>
+    <button class="tab" data-tab="students">学生名录<span class="n" id="n-students">0</span></button>
+    <button class="tab" data-tab="combo">岗位组合<span class="n">4</span></button>
+    <button class="tab" data-tab="conf">顶会顶刊<span class="n" id="n-conf">0</span></button>
+    <button class="tab" data-tab="contest">赛事<span class="n" id="n-contest">0</span></button>
+    <button class="tab" data-tab="oss">开源社区<span class="n" id="n-oss">0</span></button>
+  </nav>
+</div>
+
+<main>
+  <section class="view active" id="view-orgs">
+    <h2 class="sr-only">机构库</h2>
+    <div class="section-note">
+      <b>怎么用：</b>先按岗位筛，再按方向筛。卡片上的<b>【官网】</b>打开的是<b>实验室主页</b>，不是某个导师；<b>点导师名字</b>才是他本人的介绍页。进详情能看到「学生 / 团队名录」的官方指路链接；有官方名单的机构，还会直接列出<b>已核验的在读学生</b>。全站<b>没有待复核条目</b>，留下的每条都已核过官网。
+    </div>
+    <div class="filters">
+      <div class="fgroup">
+        <span class="flabel">岗位</span>
+        <button class="chip on" data-f-post="all">全部</button>
+        <button class="chip" data-f-post="p1">① 推理</button>
+        <button class="chip" data-f-post="p2">② 计算库</button>
+        <button class="chip" data-f-post="p3">③ CUDA</button>
+        <button class="chip" data-f-post="p4">④ 编译器</button>
+      </div>
+      <div class="fgroup">
+        <span class="flabel">方向</span>
+        <button class="chip on" data-f-dir="all">全部</button>
+        <button class="chip" data-f-dir="compiler">编译器</button>
+        <button class="chip" data-f-dir="arch">体系结构</button>
+        <button class="chip" data-f-dir="hpc">高性能计算</button>
+        <button class="chip" data-f-dir="ai">AI 系统</button>
+        <button class="chip" data-f-dir="eda">AI4EDA</button>
+      </div>
+    </div>
+    <div class="resultbar">
+      <span id="resultCount">共 15 个机构</span>
+      <span class="rhint"><span id="markCount">尚未标记跟进</span> · 「官网」进实验室主页 · 「详情」看导师与学生名录</span>
+    </div>
+    <div class="grid" id="orgGrid"></div>
+    <div class="empty" id="orgEmpty" style="display:none">没有匹配的条目，换个关键词试试。</div>
+  </section>
+
+  <section class="view" id="view-students">
+    <h2 class="sr-only">在读学生名录</h2>
+    <div class="section-note">
+      <b>收录规则：</b>只收<b>官方页面明确标为在读</b>的博士 / 硕士 —— 实验室 People 页、学生个人主页（写有「现为 X 年级博士生 / 预计 X 年毕业」）或近期论文作者单位。已毕业、只写「校友」、无法确认在读的一律不上站。<b>联系方式</b>只放本人公开的 GitHub 与邮箱，没有公开的写「未公开」，不猜测、不拼凑。<br>
+      <b>当前覆盖：</b>3 个有公开在读名单的机构（清华 PACMAN、上交 ReArch、北大 CECA）；其余机构未公开学生名录，机构详情里会明确标注，不用假数据凑数。
+    </div>
+    <div class="filters">
+      <div class="fgroup">
+        <span class="flabel">学校</span>
+        <button class="chip on" data-f-school="all">全部</button>
+        <button class="chip" data-f-school="清华大学">清华大学</button>
+        <button class="chip" data-f-school="北京大学">北京大学</button>
+        <button class="chip" data-f-school="上海交通大学">上海交通大学</button>
+      </div>
+      <div class="fgroup">
+        <span class="flabel">联系方式</span>
+        <button class="chip on" data-f-contact="all">全部</button>
+        <button class="chip" data-f-contact="direct">有 GitHub / 邮箱</button>
+      </div>
+    </div>
+    <div class="resultbar">
+      <span id="stuCount">共 0 位在读学生</span>
+      <span class="rhint">点姓名进本人主页 · 点导师进机构详情 · 邮箱可直接复制</span>
+    </div>
+    <div class="stu-wrap">
+      <table class="stu-table">
+        <thead>
+          <tr>
+            <th>姓名</th>
+            <th>学校 / 机构</th>
+            <th>导师</th>
+            <th>身份</th>
+            <th>直达联系方式</th>
+            <th class="col-src">在读证据</th>
+          </tr>
+        </thead>
+        <tbody id="stuBody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="stuEmpty" style="display:none">没有匹配的学生，换个筛选条件试试。</div>
+  </section>
+
+  <section class="view" id="view-combo">
+    <h2 class="sr-only">岗位组合</h2>
+    <div class="section-note">
+      <b>最小扫描组合：</b>每个岗位只扫 <b>2 个机构 + 1 个社区 + 1 个赛事</b>。铺开等于不做 —— 按这个表执行，两周内就能攒到 30 份对口简历。
+    </div>
+    <div class="combo-grid" id="comboGrid"></div>
+  </section>
+
+  <section class="view" id="view-conf">
+    <h2 class="sr-only">顶会顶刊</h2>
+    <div class="section-note">
+      <b>用法：</b>不要读论文标题，<b>按作者单位筛</b>。点任意会议跳到 DBLP 检索页，按年份 + 机构过滤，一作/二作是学生且单位在国内高校 —— 就是你要的人。
+    </div>
+    <div id="confBody"></div>
+  </section>
+
+  <section class="view" id="view-contest">
+    <h2 class="sr-only">赛事</h2>
+    <div class="section-note">
+      <b>为什么赛事比简历可信：</b>决赛圈队伍是「有真实工程产出 + 有团队协作 + 有交付截止」的三重背书。冠军队可以整队联系，转化率高于单点投递。
+    </div>
+    <div class="grid" id="contestGrid"></div>
+  </section>
+
+  <section class="view" id="view-oss">
+    <h2 class="sr-only">开源社区</h2>
+    <div class="section-note">
+      <b>最硬的筛子：</b>commit 记录无法包装。看 contributor 列表 + commit 密度，按国内邮箱 / 学校域名筛。<span style="font-size:12px;color:var(--muted)">※ 部分站点（GitHub）在部分网络下需要代理。</span>
+    </div>
+    <div id="ossBody"></div>
+  </section>
+
+  <div class="foot">
+    <p><b>数据版本：</b>2026-11-17 · 已逐页核验 ict.ac.cn、hpc.cs.tsinghua.edu.cn、sic.tsinghua.edu.cn、ceca.pku.edu.cn、cs.sjtu.edu.cn、cs.hust.edu.cn、ic.seu.edu.cn、sklics.fudan.edu.cn、cse.sysu.edu.cn、scse.buaa.edu.cn、keysoftlab.nju.edu.cn、cs.nju.edu.cn、cs.ustc.edu.cn、shlab.org.cn、baai.ac.cn、flagos.io、compiler.educg.net、asc-events.net、univ.ciciec.com 等。</p>
+    <p><b>自动刷新：</b>本机计划任务（Windows 任务计划程序）<b>每周一 10:00</b> 自动重测全部链接，结果写入 <code>refresh-status.json</code>；页面右上角显示最近刷新时间、失效数、超时数与变动数。链接旁的 <span class="live ok"></span> 表示上次可达，<span class="live bad"></span> 表示已失效，<span class="live chg"></span> 表示内容相比上次有变化，灰色表示超时 / 被网络拦截（GitHub 等，不代表链接失效）。刷新只覆盖本机服务，电脑关机时不会执行。</p>
+    <p style="color:var(--muted)">内部使用 · 导师职务与招生方向以官网当日信息为准。在读学生只收录官方页面可证实在读者，姓名 / 导师 / 联系方式更新于 2026-11-17。</p>
+  </div>
+</main>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+
+<script>
+/* ============ 字典 ============ */
+const POSTS = {
+  p1:{tag:"①", name:"大模型推理开发", short:"推理"},
+  p2:{tag:"②", name:"高性能计算库开发", short:"计算库"},
+  p3:{tag:"③", name:"CUDA 开发方向", short:"CUDA"},
+  p4:{tag:"④", name:"编译器开发", short:"编译器"}
+};
+const DIRS = {
+  compiler:{name:"编译器 / AI 编译器", color:"#a99bff"},
+  arch:{name:"GPU / 体系结构", color:"#4fd8c2"},
+  hpc:{name:"高性能计算 / 算子库", color:"#ffb26b"},
+  ai:{name:"AI 系统 / 推理框架", color:"#ff8fb1"},
+  eda:{name:"AI4EDA / 芯片工具链", color:"#9fb3c8"}
+};
+const VERIFY = {
+  verified:{label:"已核官网", cls:"ok", desc:"本页所有导师个人页与实验室入口均已逐一打开核验（HTTP 200 且页面含本人姓名）"}
+};
+const TRACK = [
+  {v:"none", label:"未联系", cls:""},
+  {v:"emailed", label:"已发邮件", cls:"s-et"},
+  {v:"replied", label:"已回复", cls:"s-rp"},
+  {v:"meeting", label:"已约面试", cls:"s-mt"},
+  {v:"dropped", label:"不合适", cls:"s-dr"}
+];
+
+/* ============ 机构数据 ============ */
+const DATA = [
+  {
+    id:"ict-compiler",
+    name:"中科院计算所",
+    unit:"处理器芯片全国重点实验室（原先进编译技术实验室）",
+    lab:{name:"处理器芯片全国重点实验室", url:"http://www.ict.ac.cn/jssgk/zzjg/kyxt/clqxpzdsys/"},
+    team:{name:"研究生招生信息（含拟录取公示）", url:"http://www.ict.ac.cn/yjsjy/zsxx/",
+          note:"计算所不公开在读学生名录；招生信息页会公示拟录取名单，可据此反查课题组。导师个人介绍在「研究生教育 → 导师介绍」。"},
+    people:[
+      {name:"冯晓兵", role:"研究员 / 博导 · 微体系结构导向编译优化", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496613.html"},
+      {name:"武成岗", role:"研究员级高工 / 博导 · 编译与系统安全", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496741.html"},
+      {name:"崔慧敏", role:"研究员 · 编译优化 / 并行编译 / 异构编译", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/201708/t20170810_4841078.html"},
+      {name:"吕方", role:"研究员 · 芯片编译 / 多核性能分析", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/201612/t20161205_4716420.html"}
+    ],
+    intro:"冯晓兵（研究员/博导，并行优化编译系统 Autopar 主要研发者）；武成岗（研究员级高工/博导，编译与系统安全、二进制翻译）；崔慧敏（编译优化 / 并行编译 / 异构编译优化）；吕方（芯片编译、多核性能分析与编译优化）。",
+    dirs:["compiler"], posts:["p4"],
+    why:"国内极少数把「编译 + 微体系结构」放在同一个组里的地方。「异构编程 + 异构编译优化」直接对着 GPU 后端，是编译器岗第一顺位的供给源。",
+    tags:["异构编译","GPU 后端","二进制翻译","多面体优化"],
+    verify:"verified",
+    note:"武成岗现在主攻编译与系统安全（二进制翻译、软件安全），不是传统的「多核 / 动态优化」。写触达话术时别写错他的方向。",
+    action:"优先扫「异构编译优化」方向的在读博士；开场直接问是否碰过 GPU 后端或 MLIR。"
+  },
+  {
+    id:"ict-ai",
+    name:"中科院计算所",
+    unit:"智能处理器研究中心",
+    lab:{name:"中国科学院计算技术研究所（智能处理器研究中心隶属）", url:"https://www.ict.ac.cn/"},
+    team:{name:"研究生招生信息（含拟录取公示）", url:"http://www.ict.ac.cn/yjsjy/zsxx/",
+          note:"智能处理器研究中心未单独公开学生名录；招生信息页会公示拟录取名单，可反查课题组。陈云霁 / 杜子东 / 郭崎 的导师介绍在「研究生教育 → 导师介绍」。"},
+    people:[
+      {name:"陈云霁", role:"研究员 / 博导 · 智能处理器", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/201007/t20100705_2892775.html"},
+      {name:"杜子东", role:"研究员 / 博导 · 体系结构 / 智能处理器", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/201810/t20181029_5151252.html"},
+      {name:"郭崎", role:"研究员 · 智能处理器", url:"https://www.ict.ac.cn/sourcedb/cn/jssrck/201612/t20161205_4716524.html"}
+    ],
+    intro:"陈云霁（研究员/博导，「深度学习处理器体系结构新范式」获 2020 年国家自然科学奖二等奖）；杜子东（研究员/博导，计算机体系结构、智能处理器）；郭崎（智能处理器）。",
+    dirs:["compiler","arch"], posts:["p3","p4"],
+    why:"「ISA → 编译器 → 芯片」全链条在一个组里，是寒武纪的技术源头。国内最贴岗位 ③④ 的单一供给源，学生普遍懂 BANG 与体系结构。",
+    tags:["DL 处理器","ISA 定义","寒武纪系","全栈"],
+    verify:"verified",
+    note:"该组学生不少与寒武纪有合作或去向，触达前先确认是否已有竞业 / 保密约束。",
+    action:"岗位 ③ 的第一站。直接找做「加速器架构 / kernel 优化」的博士生，不要找纯算法方向。"
+  },
+  {
+    id:"tsinghua-hpc",
+    name:"清华大学",
+    unit:"计算机系 高性能计算研究所",
+    lab:{name:"清华大学计算机系 高性能计算研究所", url:"https://hpc.cs.tsinghua.edu.cn/"},
+    team:{name:"师资队伍（20 位教师）", url:"https://hpc.cs.tsinghua.edu.cn/szdw.htm",
+          note:"官网只公开教师名录，不列在读学生；学生以课题组为单位，需从导师个人页或组内主页进入。"},
+    people:[
+      {name:"翟季冬", role:"长聘教授 / 所长 · 并行计算、编译、性能评测", url:"https://www.cs.tsinghua.edu.cn/info/1107/5621.htm"},
+      {name:"陈文光", role:"教授 · 编译与系统", url:"https://www.cs.tsinghua.edu.cn/info/1107/3513.htm"},
+      {name:"郑纬民", role:"教授 · 体系结构与分布式系统", url:"https://www.cs.tsinghua.edu.cn/info/1107/3505.htm"}
+    ],
+    intro:"翟季冬（长聘教授、高性能计算研究所所长；并行计算、编程语言与编译器、编程模型、性能评测；成果见于 SC/ICS/PPoPP/ASPLOS/MICRO/OSDI/ATC）；陈文光（编译与系统）；郑纬民（体系结构与分布式系统，中国工程院院士）。",
+    dirs:["compiler","hpc"], posts:["p4","p2"],
+    why:"国内 HPC 与 DL 系统最强组合之一。学生成果面覆盖体系结构与系统，且有 ASC 超算竞赛的带队传统 —— 工程能力是可验证的。",
+    tags:["HPC","DL 系统","ASC 带队","并行优化"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ② 的首选来源。要「手写 GEMM 打到 cuBLAS 80%+」的人，这里成规模存在。"
+  },
+  {
+    id:"pku-ceca",
+    name:"北京大学",
+    unit:"高能效计算与应用中心（CECA）",
+    lab:{name:"北京大学 高能效计算与应用中心 CECA", url:"https://ceca.pku.edu.cn/"},
+    team:{name:"研究生名单（22 位博士 + 5 位硕士）", url:"https://ceca.pku.edu.cn/people/grad/index.htm",
+          note:"这是本次核实到的少数几份公开学生名录之一，能直接看到在读博士生姓名。"},
+    people:[
+      {name:"梁云", role:"长聘副教授 · 软硬件协同 / EDA / 体系结构", url:"https://ceca.pku.edu.cn/people/faculty/ly/index.htm"},
+      {name:"罗国杰", role:"长聘副教授 · 执行主任 · 新型体系结构 / 设计自动化", url:"https://ceca.pku.edu.cn/people/faculty/lgj/index.htm"},
+      {name:"孙广宇", role:"长聘副教授 · 高能效架构 / 加速器", url:"https://ceca.pku.edu.cn/people/faculty/sgy/index.htm"},
+      {name:"林亦波", role:"助理教授 · EDA / GPU-FPGA 异构加速", url:"https://ceca.pku.edu.cn/people/faculty/lyb/index.htm"},
+      {name:"王韬", role:"研究员 · 系统结构 / 系统建模", url:"https://ceca.pku.edu.cn/people/faculty/wt/index.htm"}
+    ],
+    intro:"罗国杰（长聘副教授、中心执行主任，HPC）；梁云（长聘副教授，编译 / 加速器，中心助理主任）；孙广宇、林亦波、王韬（加速器、EDA、软硬件协同）。中心现有 22 名博士、5 名硕士在读。",
+    dirs:["compiler","arch","hpc"], posts:["p4","p3","p2"],
+    why:"编译与硬件协同在同一个中心里，最适合「算子 + 编译」的复合型候选人。中心 2015 年就有队伍拿 PAC 华北赛区一等奖，赛事与实验室的关联是可查的。",
+    tags:["软硬件协同","加速器","DSE","PAC"],
+    verify:"verified",
+    note:"",
+    action:"一个中心覆盖岗位 ②③④，适合作为「一鱼多吃」的据点。"
+  },
+  {
+    id:"nju-pl",
+    name:"南京大学",
+    unit:"计算机软件新技术全国重点实验室 · 程序设计语言研究组",
+    lab:{name:"南京大学 计算机软件新技术全国重点实验室", url:"https://keysoftlab.nju.edu.cn/"},
+    team:{name:"实验室「人才队伍」页", url:"https://keysoftlab.nju.edu.cn/1571/list.htm",
+          note:"实验室官网有独立的「人才队伍」「学生培养」栏目；在读学生名单未逐人公开，可从这里进入各课题组。"},
+    people:[
+      {name:"冯新宇", role:"教授 · 华为仓颉编程语言首席架构师", url:"https://cs.nju.edu.cn/a1/ca/c2639a238026/pagem.htm"},
+      {name:"左志强", role:"长聘副教授 · 编译技术", url:"https://cs.nju.edu.cn/96/42/c56396a235074/pagem.htm"},
+      {name:"许畅", role:"教授 · 讲授《编译原理》", url:"https://cs.nju.edu.cn/58/00/c2639a153600/pagem.htm"}
+    ],
+    intro:"冯新宇（教授，PLDI 获奖论文通讯作者，华为仓颉编程语言首席架构师）；左志强（长聘副教授，编译技术）；许畅（教授，讲授《编译原理》）。",
+    dirs:["compiler"], posts:["p4"],
+    why:"有真实工业级语言与编译器落地（华为仓颉），不是纯论文组。学生接触的是「要交付给别人用的编译器」，不是课程作业。",
+    tags:["仓颉","程序语言","形式化验证","工业落地"],
+    verify:"verified",
+    note:"华为仓颉团队与该组深度绑定，学生可能已被华为预定。",
+    action:"岗位 ④ 的第二梯队，仅次于中科院计算所。"
+  },
+  {
+    id:"ustc-comp",
+    name:"中国科学技术大学",
+    unit:"计算机学院（编译方向）",
+    lab:{name:"中国科学技术大学 计算机学院", url:"https://cs.ustc.edu.cn/"},
+    team:{name:"学院「师资队伍」页", url:"https://cs.ustc.edu.cn/zgj_23225/list.htm",
+          note:"学院未公开在读学生名录；该组学生多从编译系统设计赛与《编译原理和技术(H)》课程中产出。"},
+    people:[
+      {name:"张昱", role:"教授 · 《编译原理和技术(H)》· 编译赛特邀专家", url:"http://staff.ustc.edu.cn/~yuzhang/"}
+    ],
+    intro:"张昱（教授，讲授《编译原理和技术(H)》，全国大学生计算机系统能力大赛编译赛特邀专家）；该组长期承担编译系统设计赛的指导工作，学生从课程与赛事中直接产出完整编译器实现。",
+    dirs:["compiler"], posts:["p4"],
+    why:"系统性产出「能独立写完整编译器」的本科生与研究生。这是编译器实习最稳的供给，因为他们的作业就是实现一个完整后端。",
+    tags:["编译系统赛","完整后端","教学强","ARM/RISC-V"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ④ 性价比最高的一站：学生基数大、动手能力强、对「新 ISA 后端」不陌生。"
+  },
+  {
+    id:"tsinghua-sic",
+    name:"清华大学",
+    unit:"集成电路学院",
+    lab:{name:"清华大学 集成电路学院", url:"https://www.sic.tsinghua.edu.cn/"},
+    team:{name:"硕士招生（含拟录取公示）", url:"https://www.sic.tsinghua.edu.cn/zszp/zsxx/ssszs.htm",
+          note:"学院每年公示硕博拟录取名单，可据此反查课题组；在读学生名录不公开。教师名录在「师资队伍 → 教研人员」。"},
+    people:[
+      {name:"尹首一", role:"长聘教授 / 院长 · 可重构计算、存算一体、AI 芯片", url:"https://www.sic.tsinghua.edu.cn/info/1040/1567.htm"},
+      {name:"吴华强", role:"教授 · 存算一体 · 学院首任院长", url:"https://www.tsinghua.edu.cn/info/1329/120110.htm"},
+      {name:"刘雷波", role:"教授 · 可重构 / 硬件安全", url:"https://www.sic.tsinghua.edu.cn/info/1014/1807.htm"}
+    ],
+    intro:"尹首一（长聘教授、集成电路学院院长，可重构计算、CMOS 存算一体架构、AI 芯片设计；ISCA/MICRO/HPCA/DAC 发表，ISCA/MICRO/FPGA 技术委员会委员）；吴华强（存算一体，学院首任院长）；刘雷波（可重构计算 / 硬件安全）。",
+    dirs:["arch"], posts:["p3"],
+    why:"体系结构顶会产出密集，学生天然懂 ISA 与微架构。这是国内「AI 芯片架构」最集中的学生池之一。",
+    tags:["可重构计算","存算一体","AI 芯片","ISCA/MICRO"],
+    verify:"verified",
+    note:"尹首一是集成电路学院院长（学院 2021 年成立，整合微纳电子系与电子系资源），不是「电子系」。",
+    action:"岗位 ③ 的首选。找做「加速器架构 + kernel 实现」而不是做「器件」的学生。"
+  },
+  {
+    id:"sjtu-arch",
+    name:"上海交通大学",
+    unit:"计算机学院 计算机体系结构研究所",
+    lab:{name:"上海交通大学 计算机体系结构研究所", url:"https://cs.sjtu.edu.cn/cse/InstituteDetail.aspx?id=3"},
+    team:{name:"学院师资队伍（含研究所成员）", url:"https://cs.sjtu.edu.cn/szdw.html",
+          note:"学院/研究所均不公开在读学生名录；研究所成员与方向见实验室官网，学生需从导师个人页进入。"},
+    people:[
+      {name:"冷静文", role:"特聘教授 / 副院长 · GPU 体系结构 + AI 系统", url:"https://www.cs.sjtu.edu.cn/jiaoshiml/lengjingwen.html"}
+    ],
+    intro:"冷静文（特聘教授、计算机学院副院长、博导；面向 AI、区块链等新兴应用的计算系统设计与优化；博士方向为 GPU 处理器体系结构；国家优青）。",
+    dirs:["arch"], posts:["p3"],
+    why:"国内少见的「GPU 体系结构科班 + AI 系统」双重背景。学生既懂 GPU 微架构，又懂上层模型怎么跑。",
+    tags:["GPU 架构","AI 系统","优青","软硬协同"],
+    verify:"verified",
+    note:"",
+    action:"值得单独约一次。这是这批机构里与「自研 GPU」最同构的一位。"
+  },
+  {
+    id:"hust",
+    name:"华中科技大学",
+    unit:"计算机科学与技术学院",
+    lab:{name:"华中科技大学 计算机科学与技术学院", url:"http://www.cs.hust.edu.cn/"},
+    team:{name:"学院师资名录", url:"http://www.cs.hust.edu.cn/szdw/jsml/axmpyszmlb.htm",
+          note:"学院未公开在读学生名录；这里给的是官方师资名录与课题组入口。"},
+    people:[
+      {name:"金海", role:"教授 · 体系结构 / 并行与分布式 / 云计算", url:"http://faculty.hust.edu.cn/jinhai/zh_CN/index.htm"},
+      {name:"廖小飞", role:"教授 / 院长 · 内存计算 / 图计算", url:"http://faculty.hust.edu.cn/xfliao/zh_CN/index.htm"}
+    ],
+    intro:"金海（教授，计算机体系结构、并行与分布式处理、云计算与大数据）；廖小飞（教授、院长，计算机系统结构、系统软件、内存计算、图计算）。",
+    dirs:["arch","hpc"], posts:["p3","p2"],
+    why:"图计算团队多次刷新世界纪录，硬件 / 软件协同做加速器。学生的「性能优化」是打比赛打出来的，不是写论文写出来的。",
+    tags:["图计算","世界纪录","存储系统","加速器"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ②③ 的补充池，偏系统与存储侧。"
+  },
+  {
+    id:"fudan-skl",
+    name:"复旦大学",
+    unit:"集成芯片与系统全国重点实验室",
+    lab:{name:"复旦大学 集成芯片与系统全国重点实验室", url:"https://sklics.fudan.edu.cn/"},
+    team:{name:"实验室组织架构 / 创新中心", url:"https://sklics.fudan.edu.cn/",
+          note:"实验室按创新中心组织，学生归属各 PI 课题组，无统一学生名录。"},
+    people:[],
+    intro:"2022 年 5 月经科技部批准，由原「专用集成电路与系统国家重点实验室」为基础重新组建。开放课题方向包含：集成芯片技术与应用、新型芯片架构 / 电路 IP、AI 辅助的 EDA 算法与软件、集成电路先进装备、超高速电路与系统。",
+    dirs:["arch","eda"], posts:["p3"],
+    why:"开放课题里明确写了「AI 辅助的 EDA 算法与软件」—— 这是 AI4EDA 方向最直接的入口，也是朱涛那类候选人的天然归宿。",
+    tags:["AI4EDA","集成芯片","新型架构","EDA"],
+    verify:"verified",
+    note:"「集成芯片与系统全国重点实验室」与「专用集成电路与系统国家重点实验室」是同一个（2022 年重组），不要并列写。",
+    action:"如果公司有 EDA / 工具链需求，这里是唯一稳定来源；纯 GPU 软件栈则优先级靠后。"
+  },
+  {
+    id:"seu-asic",
+    name:"东南大学",
+    unit:"国家专用集成电路系统工程技术研究中心",
+    lab:{name:"东南大学 国家专用集成电路系统工程技术研究中心", url:"https://ic.seu.edu.cn/47780/list.htm"},
+    team:{name:"东南大学 集成电路学院", url:"https://ic.seu.edu.cn/",
+          note:"工程中心与学院共用师资，学生名单不单独公开。"},
+    people:[
+      {name:"时龙兴", role:"教授 / 中心主任 · ASIC / SoC / 低功耗", url:"https://ic.seu.edu.cn/shilongxing/main.htm"}
+    ],
+    intro:"1992 年组建，依托东南大学，主任时龙兴（教授、博导，1992 年东南大学微电子学博士）。方向覆盖大规模数字集成电路设计、低功耗电路架构、嵌入式 SRAM、可重构处理器架构。",
+    dirs:["arch"], posts:["p3"],
+    why:"国家级 ASIC 工程中心，工程化程度高。学生做过的是「能流片 / 能上板的完整设计」，不是仿真玩具。",
+    tags:["ASIC","低功耗","可重构","工程化"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ③ 的硬件侧补充，偏 ASIC 实现而非 GPU 微架构。"
+  },
+  {
+    id:"sysu-nscc",
+    name:"中山大学",
+    unit:"国家超级计算广州中心 / 深圳中心",
+    lab:{name:"国家超级计算广州中心", url:"http://www.nscc-gz.cn/"},
+    team:{name:"中山大学 计算机学院", url:"https://cse.sysu.edu.cn/",
+          note:"超算中心以工程团队 + 学院课题组混合组织，学生归属学院。"},
+    people:[
+      {name:"卢宇彤", role:"二级教授 · 国家超算广州 / 深圳中心主任", url:"https://cse.sysu.edu.cn/teacher/LuYutong"}
+    ],
+    intro:"卢宇彤（二级教授、博导，国家超算广州 / 深圳中心主任，教育部超算工程软件研究中心主任，国际超算 ISC Fellow、CCF 会士；参与五代银河、两代天河）。",
+    dirs:["hpc"], posts:["p2"],
+    why:"超算系统与应用的第一线，学生接触的是真实万卡级集群的并行优化问题。",
+    tags:["超算","天河","并行优化","ISC Fellow"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ② 的华南据点，适合做异地人才储备。"
+  },
+  {
+    id:"buaa-hpc",
+    name:"北京航空航天大学",
+    unit:"计算机学院 · 高性能计算",
+    lab:{name:"北京航空航天大学 计算机学院", url:"https://scse.buaa.edu.cn/"},
+    team:{name:"学院师资队伍", url:"https://scse.buaa.edu.cn/", note:"学院未公开在读学生名录。"},
+    people:[
+      {name:"钱德沛", role:"中国科学院院士 · 体系结构与高性能计算", url:"https://www.buaa.edu.cn/info/1300/6075.htm"}
+    ],
+    intro:"钱德沛（中国科学院院士，计算机体系结构与高性能计算；国家高性能计算环境 CNGrid 主持人；曾任「高性能计算」国家重点研发专项总体专家组组长）。",
+    dirs:["hpc"], posts:["p2"],
+    why:"HPC 基础设施与并行编程的国家级操盘者，学生视野在「系统怎么搭起来」这一层。",
+    tags:["CNGrid","HPC 基础设施","并行编程"],
+    verify:"verified",
+    note:"他曾兼任中山大学数据科学与计算机学院院长 —— 不是错误，但引用时容易混淆。",
+    action:"岗位 ② 的补充来源。"
+  },
+
+  {
+    id:"shlab",
+    name:"上海人工智能实验室",
+    unit:"DeepLink 训练 / 推理全栈",
+    lab:{name:"上海人工智能实验室", url:"https://www.shlab.org.cn/"},
+    team:{name:"DeepLink 官网（算子接口 / 文档 / 团队）", url:"https://deeplink.org.cn/",
+          note:"以工程项目组为单位，不做高校式导师制；找人看仓库 contributor 更准。"},
+    people:[],
+    intro:"DeepLink：2025 年 7 月发布超大规模跨域混训方案；2026 年 3 月发布「混推」方案，含推理中间件 DLInfer，提供 300+ 标准算子接口、11000+ 算子测例，支持国产多芯片异构，与沐曦等国产芯片厂合作。",
+    dirs:["ai"], posts:["p1"],
+    why:"这就是「推理框架 × 国产芯片」的活样本。学生天然做过多后端适配 —— 正是你们大模型推理岗最缺的那类经验。",
+    tags:["DeepLink","DLInfer","多芯片异构","国产 GPU"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ① 的首选，优先级高于任何高校实验室。"
+  },
+  {
+    id:"baai",
+    name:"北京智源人工智能研究院",
+    unit:"FlagOS 智算系统软件栈",
+    lab:{name:"北京智源人工智能研究院", url:"https://www.baai.ac.cn/"},
+    team:{name:"FlagOS（FlagGems / FlagScale / FlagTree / FlagCX）", url:"https://flagos.io/",
+          note:"开源社区型组织，贡献者名单比「学生名单」更有参考价值。"},
+    people:[],
+    intro:"FlagOS 四件套：FlagGems（Triton 通用算子库，宣称全球最大，82% 以上算子性能与 CUDA 原生持平或超过，支持 10+ AI 芯片）、FlagScale（训推一体）、FlagTree（统一 AI 编译器）、FlagCX（统一通信库）。",
+    dirs:["ai","hpc"], posts:["p1","p2"],
+    why:"算子库 + 编译器 + 通信库三件套齐全，是岗位 ①② 的最佳单一来源。学生做的就是把模型跑到新芯片上。",
+    tags:["FlagGems","Triton","统一编译器","多芯片"],
+    verify:"verified",
+    note:"",
+    action:"岗位 ② 的首选。与上海 AI Lab 一起，构成「新型研发机构」这条最容易被忽略的供给线。"
+  }
+];
+
+/* ============ 岗位组合 ============ */
+const COMBOS = [
+  {num:"01", title:"大模型推理开发", orgs:["上海 AI Lab（DeepLink）","智源 FlagScale"],
+   oss:"vLLM / SGLang", contest:"ASC AI 赛题 + 集创赛",
+   tip:"判断标准：项目是否与芯片方向挂钩 —— 只跑过 NVIDIA 卡的不算。", post:"p1"},
+  {num:"02", title:"高性能计算库", orgs:["清华 HPC 所（翟季冬）","智源 FlagGems"],
+   oss:"CUTLASS / Triton", contest:"ASC 超算竞赛",
+   tip:"判断标准：有没有一次「手写 GEMM 打到 cuBLAS 80%+」或同等级别的深度优化。", post:"p2"},
+  {num:"03", title:"CUDA 开发", orgs:["计算所智能处理器中心","清华集成电路学院（尹首一）+ 国防科大"],
+   oss:"CUDA / CUTLASS / Triton", contest:"ASC 超算竞赛 · GPU 优化赛道",
+   tip:"判断标准：是否用 CUDA 的资源模型（shared memory / bank / occupancy / 指令）做过一次真实性能决策。", post:"p3"},
+  {num:"04", title:"编译器开发", orgs:["中科院计算所（冯晓兵 / 崔慧敏 + 陈云霁组）","中科大（张昱组）"],
+   oss:"LLVM / MLIR", contest:"系统能力大赛 · 编译系统赛",
+   tip:"判断标准只有一条：是否真的写过 pass，能否讲清其中一个的设计动机。", post:"p4"}
+];
+
+/* ============ 顶会 ============ */
+const CONFS = [
+  {group:"体系结构（岗位 ③ 主战场）", items:[
+    {name:"ISCA", full:"Int. Symp. on Computer Architecture"},
+    {name:"MICRO", full:"Int. Symp. on Microarchitecture"},
+    {name:"HPCA", full:"Int. Symp. on High-Performance Computer Architecture"},
+    {name:"ASPLOS", full:"Architectural Support for Programming Languages and OS"}]},
+  {group:"编译（岗位 ④ 主战场）", items:[
+    {name:"PLDI", full:"Programming Language Design and Implementation"},
+    {name:"CGO", full:"Code Generation and Optimization"},
+    {name:"CC", full:"Compiler Construction"},
+    {name:"OOPSLA", full:"Object-Oriented Programming Systems, Languages & Applications"},
+    {name:"POPL", full:"Principles of Programming Languages"},
+    {name:"LLVM Dev Mtg", full:"LLVM Developers' Meeting（工程师向）"}]},
+  {group:"高性能计算 / 并行（岗位 ② 主战场）", items:[
+    {name:"SC", full:"Supercomputing"},
+    {name:"PPoPP", full:"Principles and Practice of Parallel Programming"},
+    {name:"ICS", full:"Int. Conf. on Supercomputing"},
+    {name:"IPDPS", full:"Int. Parallel & Distributed Processing Symp."},
+    {name:"HPDC", full:"High-Performance Parallel and Distributed Computing"}]},
+  {group:"AI 系统（岗位 ① 主战场）", items:[
+    {name:"MLSys", full:"Machine Learning and Systems"},
+    {name:"OSDI", full:"Operating Systems Design and Implementation"},
+    {name:"SOSP", full:"Symp. on Operating Systems Principles"},
+    {name:"ATC", full:"USENIX Annual Technical Conference"},
+    {name:"EuroSys", full:"European Conf. on Computer Systems"}]},
+  {group:"芯片设计 / EDA", items:[
+    {name:"DAC", full:"Design Automation Conference"},
+    {name:"ICCAD", full:"Int. Conf. on Computer-Aided Design"},
+    {name:"DATE", full:"Design, Automation & Test in Europe"},
+    {name:"ASP-DAC", full:"Asia and South Pacific DAC"},
+    {name:"ISPD", full:"Int. Symp. on Physical Design"}]},
+  {group:"期刊", items:[
+    {name:"TCAD", full:"IEEE Trans. on CAD of Integrated Circuits"},
+    {name:"TACO", full:"ACM Trans. on Architecture and Code Optimization"},
+    {name:"TPDS", full:"IEEE Trans. on Parallel and Distributed Systems"},
+    {name:"TCC", full:"IEEE Trans. on Computers"},
+    {name:"JPDC", full:"Journal of Parallel and Distributed Computing"}]}
+];
+
+/* ============ 赛事 ============ */
+const CONTESTS = [
+  {name:"全国大学生计算机系统能力大赛 · 编译系统赛", org:"全国高等学校计算机教育研究会",
+   why:"编译器岗第一优先来源。编译系统实现赛分 ARM / RISC-V 两个后端 —— 与「为新 ISA 提供后端」完全同构。参赛者是真的从零写出一个能跑的编译器。",
+   tags:["岗位 ④ 首选","ARM/RISC-V 双后端","完整后端"], verify:"verified", timing:"分赛区初赛 → 全国总决赛，通常暑期",
+   sources:[{label:"编译系统赛官网", url:"https://compiler.educg.net/"},{label:"大赛总站", url:"https://cscc.educg.net/"}]},
+  {name:"ASC 世界大学生超算竞赛", org:"ASC 组委会（中国发起）",
+   why:"与 SC、ISC 并称三大超算赛事。决赛要在 5000W 总功耗约束下自建小集群，跑 HPL / HPCG + AI 赛题 —— 这是算子与并行优化最硬的证据。ASC26 总决赛 2026-05-16~20 无锡举办。",
+   tags:["岗位 ② 首选","GPU 优化赛道","自建集群"], verify:"verified", timing:"ASC27 报名通常在前一年 11 月启动；总决赛次年 5 月",
+   sources:[{label:"ASC 官网", url:"https://www.asc-events.net/StudentChallenge/"},{label:"ASC26 报名启动（光明网）", url:"https://tech.gmw.cn/2025-11/07/content_38398478.htm"}]},
+  {name:"全国大学生集成电路创新创业大赛（集创赛）", org:"工信部人才交流中心",
+   why:"国内集成电路领域最大规模高校赛事，覆盖本 / 硕 / 博，7 大分赛区，数十家企业冠名出题。芯片方向学生的最大集散地。2026 年为第十届。",
+   tags:["芯片方向","本硕博","企业出题"], verify:"verified", timing:"通常春季报名，暑期分区赛，9 月总决赛",
+   sources:[{label:"集创赛官网", url:"https://univ.ciciec.com/"}]},
+  {name:"CPU 设计赛（龙芯杯）", org:"已并入全国大学生计算机系统能力大赛",
+   why:"偏 CPU 微架构与底层实现。做过完整流水线 + 乱序 + Cache 的学生，对「微架构」的理解是动手得来的。",
+   tags:["底层实现","微架构","龙芯"], verify:"verified", timing:"与系统能力大赛同步",
+   sources:[{label:"龙芯杯官网", url:"https://www.nscscc.com/"}]}
+];
+
+/* ============ 开源 ============ */
+const OSS = [
+  {line:"编译器线（岗位 ④）", post:"p4", items:[
+    {name:"LLVM", url:"https://llvm.org/", note:"后端 / 中端优化的主战场"},
+    {name:"MLIR", url:"https://mlir.llvm.org/", note:"AI 编译器的通用底座"},
+    {name:"TVM", url:"https://tvm.apache.org/", note:"深度学习编译器，国内贡献者多"},
+    {name:"Buddy-MLIR", url:"https://github.com/buddy-compiler/buddy-mlir", note:"国内团队主导的 MLIR 生态项目"},
+    {name:"TileLang", url:"https://github.com/tile-ai/tilelang", note:"Tile 级 DSL，与算子库强相关"}]},
+  {line:"算子线（岗位 ②）", post:"p2", items:[
+    {name:"CUTLASS", url:"https://github.com/NVIDIA/cutlass", note:"GEMM 的工业级参考实现"},
+    {name:"CuTe", url:"https://github.com/NVIDIA/cutlass/tree/main/include/cute", note:"CUTLASS 的 layout / tensor 抽象层"},
+    {name:"CUB", url:"https://github.com/NVIDIA/cub", note:"GPU 并行原语"},
+    {name:"Triton", url:"https://github.com/triton-lang/triton", note:"写 kernel 的新范式"},
+    {name:"FlagGems", url:"https://github.com/FlagOpen/FlagGems", note:"智源的 Triton 算子库，国产芯片适配"},
+    {name:"FlashAttention", url:"https://github.com/Dao-AILab/flash-attention", note:"attention 优化标杆"},
+    {name:"FlashInfer", url:"https://github.com/flashinfer-ai/flashinfer", note:"推理侧 attention / sampling kernel"}]},
+  {line:"框架线（岗位 ①）", post:"p1", items:[
+    {name:"vLLM", url:"https://github.com/vllm-project/vllm", note:"推理 serving 的事实标准"},
+    {name:"SGLang", url:"https://github.com/sgl-project/sglang", note:"高性能结构化生成"},
+    {name:"LMDeploy", url:"https://github.com/InternLM/lmdeploy", note:"国产推理部署栈"},
+    {name:"PyTorch Inductor", url:"https://github.com/pytorch/pytorch/tree/main/torch/_inductor", note:"图编译 + codegen"},
+    {name:"DeepLink", url:"https://deeplink.org.cn/", note:"上海 AI Lab 的多芯片训推栈"}]},
+  {line:"芯片线（岗位 ③）", post:"p3", items:[
+    {name:"寒武纪 BANG", url:"https://www.cambricon.com/", note:"国产 DL 处理器编程模型"},
+    {name:"昇腾 CANN", url:"https://www.hiascend.com/", note:"昇腾算子 / 编译器栈"},
+    {name:"申威 / 神威", url:"https://www.jos.org.cn/jos/article/abstract/mg013", note:"swLLVM 论文，了解新 ISA 后端怎么做"}]}
+];
+
+/* ============ 在读学生（只收官方页面可证实在读者） ============ */
+const PZ = "https://pacman.cs.tsinghua.edu.cn/~zjd/";
+const REARCH = "https://cs.sjtu.edu.cn/~leng-jw/team.html";
+const STUDENTS = [
+  /* --- 清华 PACMAN（翟季冬组）：People 页 2026-11-01 构建，PhD / MS 分列 --- */
+  {name:"翟明书", en:"Mingshu Zhai", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读", year:"2022 级",
+   github:"https://github.com/zms1999", email:"zhaims22@mails.tsinghua.edu.cn",
+   page:"https://zms1999.github.io/", source:PZ+"people/", srcLabel:"PACMAN People + 本人主页"},
+  {name:"Runxin Zhong", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   github:"https://github.com/monellz", page:PZ+"author/runxin-zhong/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Jingze Xing", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   github:"https://github.com/Simphoni", page:PZ+"author/jingze-xing/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Minkun Guo", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   github:"https://github.com/G-keng", page:PZ+"author/minkun-guo/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Zhi Wu", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/zhi-wu/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Qihao Zhang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/qihao-zhang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Haoyu Yang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/haoyu-yang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Yuyang Chen", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/yuyang-chen/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Runqing Zhang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/runqing-zhang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Jun Kai", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/jun-kai/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Kai Yang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/kai-yang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Zhiyu Xue", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/zhiyu-xue/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Qigang Yang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/qigang-yang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Minxing Huang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/minxing-huang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Chengyu Shi", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/chengyu-shi/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Shuangyu Li", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/shuangyu-li/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Yuqing Yang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/yuqing-yang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Erzhu Ding", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/erzhu-ding/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Shuhong Huang", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"博士在读",
+   page:PZ+"author/shuhong-huang/", source:PZ+"people/", srcLabel:"PACMAN People（PhD 栏）"},
+  {name:"Chengzhang Wu", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/chengzhang-wu/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+  {name:"Hongrui Lian", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/hongrui-lian/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+  {name:"Rui Sun", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/rui-sun/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+  {name:"Xirui Shui", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/xirui-shui/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+  {name:"Zhangqiao Yue", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/zhangqiao-yue/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+  {name:"Hsinyu Luo", org:"tsinghua-hpc", school:"清华大学", advisor:"翟季冬", status:"硕士在读",
+   page:PZ+"author/hsinyu-luo/", source:PZ+"people/", srcLabel:"PACMAN People（MS 栏）"},
+
+  /* --- 上交 ReArch（冷静文组）：团队页按入学年份列在读生，取 2023/2024 级 --- */
+  {name:"胡洧铭", en:"Weiming Hu", org:"sjtu-arch", school:"上海交通大学", advisor:"冷静文", status:"博士在读", year:"2023 级",
+   github:"https://github.com/huweim", email:"weiminghu@sjtu.edu.cn",
+   page:"https://huweim.github.io/", source:REARCH, srcLabel:"ReArch 团队页 + 本人主页"},
+  {name:"Ziyu Huang", org:"sjtu-arch", school:"上海交通大学", advisor:"冷静文", status:"博士在读", year:"2023 级",
+   page:REARCH, source:REARCH, srcLabel:"ReArch 团队页（Ph.D. 2023）"},
+  {name:"Haoyan Zhang", org:"sjtu-arch", school:"上海交通大学", advisor:"冷静文", status:"博士在读", year:"2024 级",
+   page:REARCH, source:REARCH, srcLabel:"ReArch 团队页（Ph.D. 2024）"},
+  {name:"Jiawei Huang", org:"sjtu-arch", school:"上海交通大学", advisor:"冷静文", status:"硕士在读", year:"2024 级",
+   page:REARCH, source:REARCH, srcLabel:"ReArch 团队页（M.S. 2024）"},
+  {name:"Xing Ma", org:"sjtu-arch", school:"上海交通大学", advisor:"冷静文", status:"硕士在读", year:"2024 级",
+   page:REARCH, source:REARCH, srcLabel:"ReArch 团队页（M.S. 2024）"},
+
+  /* --- 北大 CECA（罗国杰组）：个人主页 / 论文作者单位证实在读 --- */
+  {name:"Xinming Wei", org:"pku-ceca", school:"北京大学", advisor:"罗国杰", status:"博士在读", year:"2021 级 · 毕业年级",
+   github:"https://github.com/xinming-wei", email:"weixinming@pku.edu.cn",
+   page:"https://xmwei.com/", source:"https://xmwei.com/", srcLabel:"本人主页（2026-08 更新）"},
+  {name:"Ziyun Zhang", org:"pku-ceca", school:"北京大学", advisor:"罗国杰", status:"博士在读", year:"2023 级",
+   github:"https://github.com/xxccxcxc", email:"ziyunzhang@stu.pku.edu.cn",
+   page:"https://github.com/xxccxcxc", source:"https://arxiv.org/html/2506.17255", srcLabel:"论文作者单位 + 邮箱"}
+];
+
+/* ============ 状态 ============ */
+const LS_KEY = "gpu-sourcing-track-v2";
+let track = {};
+try { track = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); } catch(e){ track = {}; }
+function saveTrack(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(track)); }catch(e){} }
+function trk(id){ return track[id] || "none"; }
+
+let STATUS = null;   // refresh-status.json
+const state = {q:"", post:"all", dir:"all", verify:"all", school:"all", contactOnly:false, tab:"orgs"};
+
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function liveDot(url){
+  if(!STATUS || !STATUS.items || !STATUS.items[url]) return '<span class="live" title="尚未检测"></span>';
+  const it = STATUS.items[url];
+  if(it.changed) return '<span class="live chg" title="内容相比上次有变化"></span>';
+  if(it.status >= 200 && it.status < 400) return '<span class="live ok" title="上次检测可达（HTTP ' + it.status + '）"></span>';
+  if(!it.status || it.status === 0) return '<span class="live" title="上次检测超时 / 被网络拦截，不代表链接失效"></span>';
+  return '<span class="live bad" title="上次检测失败（HTTP ' + it.status + '）"></span>';
+}
+
+function match(o){
+  if(state.post!=="all" && !(o.posts||[]).includes(state.post)) return false;
+  if(state.dir!=="all" && !(o.dirs||[]).includes(state.dir)) return false;
+  if(state.verify!=="all" && o.verify!==state.verify) return false;
+  if(state.q){
+    const blob = [o.name,o.unit,(o.people||[]).map(p=>p.name+" "+(p.role||"")).join(" "),o.why,(o.tags||[]).join(" "),o.intro||""].join(" ").toLowerCase();
+    if(!blob.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+/* ---------- 卡片 ---------- */
+function cardHTML(o){
+  const v = VERIFY[o.verify];
+  const dirTags = (o.dirs||[]).map(d => `<span class="tag dir"><i class="swatch" style="background:${DIRS[d].color}"></i>${DIRS[d].name}</span>`).join("");
+  const postTags = (o.posts||[]).map(p => `<span class="tag">${POSTS[p].tag} ${POSTS[p].short}</span>`).join("");
+  const warn = o.negative ? `<span class="tag neg">不建议 sourcing</span>` : "";
+  const opts = TRACK.map(t => `<option value="${t.v}" ${trk(o.id)===t.v?"selected":""}>${t.label}</option>`).join("");
+  const cls = TRACK.find(t=>t.v===trk(o.id)).cls;
+  const people = (o.people||[]).length
+    ? o.people.map(p => {
+        const href = p.url || (o.team && o.team.url) || "#";
+        return `<a href="${href}" target="_blank" rel="noopener" title="${esc(p.role||"")}">${esc(p.name)}</a>`;
+      }).join('<span class="sep">·</span>')
+    : `<span style="color:var(--muted);font-weight:400">以团队 / 项目组为单位</span>`;
+  return `
+  <article class="card ${o.negative?"negative":""}" data-id="${o.id}">
+    <div class="card-top">
+      <span class="dot ${v.cls}"></span>
+      <div style="flex:1">
+        <h3>${esc(o.name)}</h3>
+        <p class="unit">${esc(o.unit)}</p>
+      </div>
+      <span class="badge ${v.cls}">${v.label}</span>
+    </div>
+    <p class="people">${people}</p>
+    <p class="why">${esc(o.why)}</p>
+    <div class="tags">${dirTags}${postTags}${warn}</div>
+    <div class="card-foot">
+      <a class="btn primary" href="${o.lab.url}" target="_blank" rel="noopener" title="打开实验室 / 学院官网">官网 ↗${liveDot(o.lab.url)}</a>
+      <button class="btn" data-act="detail" data-id="${o.id}">详情</button>
+      <select class="track ${cls}" data-track="${o.id}" title="跟进状态">${opts}</select>
+    </div>
+  </article>`;
+}
+
+function renderOrgs(){
+  const list = DATA.filter(match);
+  $("#orgGrid").innerHTML = list.map(cardHTML).join("");
+  $("#orgEmpty").style.display = list.length ? "none" : "block";
+  $("#n-orgs").textContent = DATA.length;
+  const filtered = state.post!=="all" || state.dir!=="all" || state.verify!=="all" || !!state.q;
+  $("#resultCount").textContent = filtered
+    ? `筛选结果 ${list.length} / ${DATA.length} 个机构`
+    : `共 ${DATA.length} 个机构 · ${DATA.reduce((a,o)=>a+(o.people||[]).length,0)} 位导师`;
+  syncPillCounts();
+  updateStats();
+}
+
+function syncPillCounts(){
+  $$("[data-pcount]").forEach(el=>{
+    const p = el.dataset.pcount;
+    const n = DATA.filter(o=>(o.posts||[]).includes(p)).length;
+    el.textContent = `${n} 个目标机构`;
+  });
+}
+
+function updateStats(){
+  $("#s1").textContent = DATA.length;
+  $("#s2").textContent = DATA.reduce((a,o)=>a+(o.people||[]).length,0);
+  $("#s3").textContent = STUDENTS.length;
+  $("#s4").textContent = CONFS.reduce((a,g)=>a+g.items.length,0);
+  $("#s5").textContent = CONTESTS.length + OSS.reduce((a,x)=>a+x.items.length,0);
+  const marked = Object.keys(track).filter(k=>track[k] && track[k]!=="none").length;
+  const mc = $("#markCount");
+  if(mc) mc.textContent = marked ? `已标记 ${marked} 个` : "尚未标记跟进";
+}
+
+/* ---------- 在读学生 ---------- */
+function matchStudent(s){
+  if(state.school!=="all" && s.school!==state.school) return false;
+  if(state.contactOnly && !s.github && !s.email) return false;
+  if(state.q){
+    const org = DATA.find(o=>o.id===s.org) || {};
+    const blob = [s.name,s.en,s.school,org.unit,s.advisor,s.status,s.year].join(" ").toLowerCase();
+    if(!blob.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+function renderStudents(){
+  const list = STUDENTS.filter(matchStudent);
+  $("#stuBody").innerHTML = list.map(s=>{
+    const org = DATA.find(o=>o.id===s.org) || {};
+    const contacts = [
+      s.github ? `<a class="gh" href="${s.github}" target="_blank" rel="noopener" title="GitHub 主页">github.com/${esc(s.github.replace(/^https?:\/\/(www\.)?github\.com\//,""))}</a>` : "",
+      s.email ? `<a class="em" href="mailto:${esc(s.email)}" title="点击写邮件">${esc(s.email)}</a>` : ""
+    ].filter(Boolean).join("");
+    const href = s.page || s.github || s.source;
+    return `<tr>
+      <td><a class="stu-name" href="${href}" target="_blank" rel="noopener">${esc(s.name)}</a>${s.en?`<span class="stu-en">${esc(s.en)}</span>`:""}</td>
+      <td class="stu-org">${esc(s.school)}<span>${esc(org.unit||"")}</span></td>
+      <td><button class="stu-adv" data-act="detail" data-id="${s.org}" title="打开机构详情">${esc(s.advisor)}</button></td>
+      <td><span class="stu-status ${s.status.includes("硕士")?"ms":""}">${esc(s.status)}</span>${s.year?`<span class="stu-year">${esc(s.year)}</span>`:""}</td>
+      <td><div class="stu-contact">${contacts || `<span class="stu-none">未公开 · 走官方个人页</span>`}</div></td>
+      <td class="col-src"><a class="stu-src" href="${s.source}" target="_blank" rel="noopener">${esc(s.srcLabel||"官方页面")} ↗</a></td>
+    </tr>`;
+  }).join("");
+  $("#stuEmpty").style.display = list.length ? "none" : "block";
+  $("#n-students").textContent = STUDENTS.length;
+  $("#stuCount").textContent = list.length === STUDENTS.length
+    ? `共 ${STUDENTS.length} 位在读学生`
+    : `筛选结果 ${list.length} / ${STUDENTS.length} 位在读学生`;
+}
+
+/* ---------- 详情 ---------- */
+function openDetail(id){
+  const o = DATA.find(x=>x.id===id);
+  if(!o) return;
+  const v = VERIFY[o.verify];
+  const dirTags = (o.dirs||[]).map(d=>`<span class="tag dir"><i class="swatch" style="background:${DIRS[d].color}"></i>${DIRS[d].name}</span>`).join("");
+  const postTags = (o.posts||[]).map(p=>`<span class="tag">${POSTS[p].tag} ${POSTS[p].name}</span>`).join("");
+
+  const peopleRows = (o.people||[]).length
+    ? o.people.map(p => {
+        const href = p.url || (o.team && o.team.url) || "#";
+        const pending = p.url ? "" : `<span class="badge mid" style="margin-left:6px">该导师暂无独立主页</span>`;
+        return `<a class="prow" href="${href}" target="_blank" rel="noopener">
+          <span class="pn">${esc(p.name)}</span>${pending}
+          <span class="pr">${esc(p.role||"")}</span><span class="go">↗</span>
+        </a>`;
+      }).join("")
+    : `<div class="prow"><span class="pn" style="color:var(--muted);font-weight:600">以团队 / 项目组为单位，无个人导师页</span></div>`;
+
+  const teamNote = o.team && o.team.note ? `<p class="hint">${esc(o.team.note)}</p>` : "";
+
+  const stu = STUDENTS.filter(s=>s.org===o.id);
+  const stuBlock = stu.length
+    ? `<div class="plist">${stu.map(s=>`
+        <a class="prow" href="${s.page || s.source}" target="_blank" rel="noopener">
+          <span class="pn">${esc(s.name)}</span>
+          <span class="pr">${esc(s.status)}${s.year?" · "+esc(s.year):""} · 导师 ${esc(s.advisor)}${s.email?" · "+esc(s.email):""}</span>
+          <span class="go">↗</span>
+        </a>`).join("")}</div>
+       <button class="btn sm" data-goto="students" style="margin-top:10px">在「学生名录」中筛选 →</button>`
+    : `<p class="hint">该机构未公开可核验的在读学生名单（军工 / 保密单位或组内不建人员页）。点上方「学生 / 团队名录」按官方指路自查；本站不猜测、不补造。</p>`;
+
+  $("#modal").innerHTML = `
+    <div class="modal-head">
+      <h3>${esc(o.name)}</h3>
+      <p class="unit">${esc(o.unit)}</p>
+      <button class="modal-close" id="mc">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="mblock">
+        <h4>入口</h4>
+        <div class="big-links">
+          <a class="big-link brand" href="${o.lab.url}" target="_blank" rel="noopener">
+            <span class="k">实验室 / 学院官网</span>
+            <span class="v">${esc(o.lab.name)} ↗</span>
+            <span class="u">${esc(o.lab.url)}</span>
+          </a>
+          <a class="big-link team" href="${o.team.url}" target="_blank" rel="noopener">
+            <span class="k">学生 / 团队名录（官方指路）</span>
+            <span class="v">${esc(o.team.name)} ↗</span>
+            <span class="u">${esc(o.team.url)}</span>
+          </a>
+        </div>
+        ${teamNote}
+      </div>
+
+      <div class="mblock">
+        <h4>导师（点击进入个人介绍页）</h4>
+        <div class="plist">${peopleRows}</div>
+      </div>
+
+      <div class="mblock">
+        <h4>在读学生 · 已核验（${stu.length}）</h4>
+        ${stuBlock}
+      </div>
+
+      <div class="mblock">
+        <h4>核验状态</h4>
+        <p><span class="badge ${v.cls}">${v.label}</span> ${esc(v.desc)}</p>
+      </div>
+
+      <div class="mblock">
+        <h4>方向与定位</h4>
+        <p>${esc(o.intro)}</p>
+      </div>
+
+      <div class="mblock">
+        <h4>为什么对口</h4>
+        <p>${esc(o.why)}</p>
+      </div>
+
+      <div class="mblock">
+        <h4>对应岗位</h4>
+        <div class="tags">${dirTags}${postTags}</div>
+      </div>
+
+      ${o.note ? `<div class="mblock"><h4>注意</h4><p style="background:var(--mid-soft);padding:10px 12px;border-radius:9px;color:var(--mid)">${esc(o.note)}</p></div>` : ``}
+      ${o.action ? `<div class="mblock"><h4>建议动作</h4><p>${esc(o.action)}</p></div>` : ``}
+
+      <div class="mblock">
+        <h4>链接健康度（每周一 10:00 自动检测）</h4>
+        <div class="links">
+          <div class="link-row">${liveDot(o.lab.url)} <span style="font-size:13px;color:var(--ink2)">实验室官网</span> <span class="lk" style="font-size:12px;color:var(--muted)">${esc(o.lab.url)}</span></div>
+          <div class="link-row">${liveDot(o.team.url)} <span style="font-size:13px;color:var(--ink2)">学生 / 团队</span> <span class="lk" style="font-size:12px;color:var(--muted)">${esc(o.team.url)}</span></div>
+          ${(o.people||[]).filter(p=>p.url).map(p=>`<div class="link-row">${liveDot(p.url)} <span style="font-size:13px;color:var(--ink2)">${esc(p.name)}</span> <span class="lk" style="font-size:12px;color:var(--muted)">${esc(p.url)}</span></div>`).join("")}
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <button class="btn" id="probeBtn">立即实测可达性</button>
+          <span class="probe-out" id="probeOut"></span>
+        </div>
+      </div>
+
+      <div class="mblock">
+        <h4>实时复核（跳官网站内检索）</h4>
+        <div class="recheck">
+          ${recheckLinks(o)}
+        </div>
+      </div>
+
+      <div class="mblock">
+        <h4>跟进状态</h4>
+        <select class="track" data-track="${o.id}" id="mTrack" style="padding:8px 12px;font-size:13px">
+          ${TRACK.map(t=>`<option value="${t.v}" ${trk(o.id)===t.v?"selected":""}>${t.label}</option>`).join("")}
+        </select>
+      </div>
+    </div>`;
+
+  $("#modalBg").classList.add("on");
+  document.body.style.overflow = "hidden";
+  $("#mc").onclick = closeModal;
+  $("#mTrack").onchange = e => setTrack(o.id, e.target.value);
+  $("#probeBtn").onclick = () => probe(o.lab.url, $("#probeOut"));
+}
+
+function recheckLinks(o){
+  const out = [];
+  const dom = (o.lab.url.match(/^https?:\/\/([^\/]+)/)||[])[1];
+  if(dom){
+    const host = dom.replace(/^www\./,"");
+    const nm = (o.people && o.people[0] && !o.people[0].name.includes("团队")) ? o.people[0].name : o.name;
+    out.push(`<a class="btn" href="https://www.bing.com/search?q=${encodeURIComponent("site:"+host+" "+nm+" 招生")}" target="_blank" rel="noopener">查 ${esc(nm)} 今年招生</a>`);
+  }
+  out.push(`<a class="btn" href="https://www.bing.com/search?q=${encodeURIComponent(o.name+" "+o.unit+" 博士生 硕士生")}" target="_blank" rel="noopener">查在读学生 / 组内成员</a>`);
+  return out.join("");
+}
+
+function closeModal(){ $("#modalBg").classList.remove("on"); document.body.style.overflow = ""; }
+
+async function probe(url, el){
+  el.textContent = "检测中…"; el.style.color = "var(--muted)";
+  const ctl = new AbortController();
+  const t = setTimeout(()=>ctl.abort(), 8000);
+  try{
+    await fetch(url, {mode:"no-cors", signal:ctl.signal, cache:"no-store"});
+    el.textContent = "网络可达（内容需在官网确认）"; el.style.color = "var(--ok)";
+  }catch(err){
+    el.textContent = "当前网络不可达（可能被代理 / 防火墙拦截）"; el.style.color = "var(--warn)";
+  }finally{ clearTimeout(t); }
+}
+
+function setTrack(id, v){
+  track[id] = v; saveTrack();
+  $$(`select[data-track="${id}"]`).forEach(s=>{ s.value = v; s.className = "track " + (TRACK.find(t=>t.v===v).cls||""); });
+  updateStats();
+}
+
+/* ---------- 其它视图 ---------- */
+function renderCombos(){
+  $("#comboGrid").innerHTML = COMBOS.map(c=>`
+    <div class="combo">
+      <div class="num">${c.num}</div>
+      <h3>${esc(c.title)}</h3>
+      <p class="sub">最小扫描组合</p>
+      <ul>
+        <li><span class="k">机构</span><span>${c.orgs.map(esc).join("；")}</span></li>
+        <li><span class="k">社区</span><span>${esc(c.oss)}</span></li>
+        <li><span class="k">赛事</span><span>${esc(c.contest)}</span></li>
+        <li><span class="k">尺子</span><span>${esc(c.tip)}</span></li>
+      </ul>
+      <div class="cta"><button class="btn primary" data-jump="${c.post}">看对应机构 →</button></div>
+    </div>`).join("");
+}
+function renderConfs(){
+  $("#confBody").innerHTML = CONFS.map(g=>`
+    <div class="conf-group">
+      <h3>${esc(g.group)}</h3>
+      <div class="conf-items">
+        ${g.items.map(i=>`<a class="conf-item" href="https://dblp.org/search?q=${encodeURIComponent(i.name)}" target="_blank" rel="noopener">${esc(i.name)}<small>${esc(i.full)}</small></a>`).join("")}
+      </div>
+    </div>`).join("");
+  $("#n-conf").textContent = CONFS.reduce((a,g)=>a+g.items.length,0);
+}
+function renderContests(){
+  $("#contestGrid").innerHTML = CONTESTS.map(c=>{
+    const v = VERIFY[c.verify];
+    return `
+    <article class="card">
+      <div class="card-top">
+        <span class="dot ${v.cls}"></span>
+        <div style="flex:1"><h3>${esc(c.name)}</h3><p class="unit">${esc(c.org)}</p></div>
+        <span class="badge ${v.cls}">${v.label}</span>
+      </div>
+      <p class="why">${esc(c.why)}</p>
+      <div class="tags">${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+      <p class="unit" style="margin-top:2px"><b>时间：</b>${esc(c.timing)}</p>
+      <div class="card-foot">
+        ${c.sources.map((s,i)=>`<a class="btn ${i===0?"primary":""}" href="${s.url}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join("")}
+      </div>
+    </article>`;
+  }).join("");
+  $("#n-contest").textContent = CONTESTS.length;
+}
+function renderOss(){
+  $("#ossBody").innerHTML = [...OSS].sort((a,b)=>(a.post||"").localeCompare(b.post||"")).map(g=>`
+    <div class="panel" style="margin-bottom:16px">
+      <div class="phead">${esc(g.line)}</div>
+      ${g.items.map(i=>`<div class="row">
+        <div class="name" style="min-width:150px"><a href="${i.url}" target="_blank" rel="noopener">${esc(i.name)} ↗</a></div>
+        <div class="desc">${esc(i.note)}</div>
+      </div>`).join("")}
+    </div>`).join("");
+  $("#n-oss").textContent = OSS.reduce((a,g)=>a+g.items.length,0);
+}
+
+/* ---------- 刷新状态 ---------- */
+function fmtTime(iso){
+  try{
+    const d = new Date(iso);
+    const p = n => String(n).padStart(2,"0");
+    return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+  }catch(e){ return iso; }
+}
+function applyStatus(){
+  const el = $("#freshness"), tx = $("#freshText");
+  if(!STATUS || !STATUS.refreshedAt){
+    el.className = "freshness";
+    tx.textContent = "未连接自动刷新（用 启动.ps1 运行）";
+    return;
+  }
+  const bad = Object.values(STATUS.items||{}).filter(i=>i.status>=400).length;
+  const gh  = Object.keys(STATUS.items||{}).filter(u=>/github\.com/.test(u) && !STATUS.items[u].status).length;
+  const to  = Object.values(STATUS.items||{}).filter(i=>!i.status || i.status===0).length - gh;
+  const chg = Object.values(STATUS.items||{}).filter(i=>i.changed).length;
+  const days = (Date.now() - new Date(STATUS.refreshedAt).getTime()) / 86400000;
+  el.className = "freshness " + (days <= 8 ? "live" : "stale");
+  tx.textContent = `${fmtTime(STATUS.refreshedAt).slice(5)} 刷新 · ${bad} 失效 · ${to} 超时 · ${chg} 变动`;
+  el.title = `共检测 ${STATUS.total||0} 个链接，最近一次：${fmtTime(STATUS.refreshedAt)}`
+    + (gh ? `；另有 ${gh} 个 GitHub 链接因本机网络被拦截而未计入超时，不代表链接失效` : "；超时多为本机网络或代理拦截，不代表链接失效");
+}
+async function loadStatus(){
+  try{
+    const r = await fetch("refresh-status.json?t=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) throw 0;
+    STATUS = await r.json();
+    applyStatus();
+    renderOrgs();
+  }catch(e){ applyStatus(); }
+}
+
+/* ---------- 事件 ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-act='detail']");
+  if(t){ openDetail(t.dataset.id); return; }
+  const g = e.target.closest("[data-goto='students']");
+  if(g){ closeModal(); switchTab("students"); renderStudents(); document.querySelector(".tabs-wrap").scrollIntoView({behavior:"smooth"}); return; }
+  const j = e.target.closest("[data-jump]");
+  if(j){
+    state.post = j.dataset.jump; state.dir="all"; state.verify="all"; state.q="";
+    $("#q").value=""; syncChips(); switchTab("orgs"); renderOrgs();
+    window.scrollTo({top:0,behavior:"smooth"}); return;
+  }
+  if(e.target.id === "modalBg") closeModal();
+});
+document.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); });
+document.addEventListener("change", e => {
+  const s = e.target.closest("select[data-track]");
+  if(s) setTrack(s.dataset.track, s.value);
+});
+$("#q").addEventListener("input", e => { state.q = e.target.value.trim(); renderOrgs(); renderStudents(); });
+$$("[data-f-post]").forEach(b => b.onclick = () => { state.post = b.dataset.fPost; syncChips(); renderOrgs(); });
+$$("[data-f-dir]").forEach(b => b.onclick = () => { state.dir = b.dataset.fDir; syncChips(); renderOrgs(); });
+$$("[data-f-verify]").forEach(b => b.onclick = () => { state.verify = b.dataset.fVerify; syncChips(); renderOrgs(); });
+$$("[data-f-school]").forEach(b => b.onclick = () => { state.school = b.dataset.fSchool; syncChips(); renderStudents(); });
+$$("[data-f-contact]").forEach(b => b.onclick = () => { state.contactOnly = b.dataset.fContact === "direct"; syncChips(); renderStudents(); });
+
+function syncChips(){
+  $$("[data-f-post]").forEach(b => b.classList.toggle("on", b.dataset.fPost === state.post));
+  $$("[data-f-dir]").forEach(b => b.classList.toggle("on", b.dataset.fDir === state.dir));
+  $$("[data-f-verify]").forEach(b => b.classList.toggle("on", b.dataset.fVerify === state.verify));
+  $$("[data-f-school]").forEach(b => b.classList.toggle("on", b.dataset.fSchool === state.school));
+  $$("[data-f-contact]").forEach(b => b.classList.toggle("on", (b.dataset.fContact === "direct") === state.contactOnly));
+  $$("#heroPills .pill").forEach(b => b.classList.toggle("active", b.dataset.post === state.post));
+}
+$$("#heroPills .pill").forEach(b => b.onclick = () => {
+  state.post = (state.post === b.dataset.post) ? "all" : b.dataset.post;
+  state.dir="all"; state.verify="all"; syncChips(); switchTab("orgs"); renderOrgs();
+  document.querySelector(".tabs-wrap").scrollIntoView({behavior:"smooth"});
+});
+function switchTab(name){
+  state.tab = name;
+  $$(".tab").forEach(t => t.classList.toggle("active", t.dataset.tab === name));
+  $$(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + name));
+}
+$$(".tab").forEach(t => t.onclick = () => switchTab(t.dataset.tab));
+
+/* ---------- 导出 ---------- */
+function toMarkdown(){
+  const list = DATA.filter(match);
+  let md = `# 芯片目标实验室 / 顶会 / 赛事合辑\n\n> 核验日期 2026-11-16 ｜ 共 ${list.length} 条\n\n`;
+  list.forEach(o=>{
+    md += `## ${o.name} · ${o.unit}\n`;
+    md += `- 实验室官网：${o.lab.name} — ${o.lab.url}\n`;
+    md += `- 团队/学生：${o.team.name} — ${o.team.url}\n`;
+    md += `- 导师：${(o.people||[]).map(p=>p.name+(p.url?`(${p.url})`:"")).join("；")||"—"}\n`;
+    md += `- 岗位：${(o.posts||[]).map(p=>POSTS[p].name).join("、")||"—"}\n`;
+    md += `- 为什么对口：${o.why}\n`;
+    if(o.note) md += `- 注意：${o.note}\n`;
+    md += `- 跟进：${TRACK.find(t=>t.v===trk(o.id)).label}\n\n`;
+  });
+  if(STUDENTS.length){
+    md += `# 在读学生名录（${STUDENTS.length} 位 · 已核验在读）\n\n`;
+    STUDENTS.forEach(s=>{
+      md += `- **${s.name}**${s.en?` (${s.en})`:""} ｜ ${s.school} · 导师 ${s.advisor} ｜ ${s.status}${s.year?`（${s.year}）`:""} ｜ GitHub：${s.github||"—"} ｜ 邮箱：${s.email||"—"} ｜ 在读证据：${s.source}\n`;
+    });
+    md += "\n";
+  }
+  return md;
+}
+$("#btnCopy").onclick = async () => {
+  const txt = toMarkdown();
+  try{ await navigator.clipboard.writeText(txt); }
+  catch(e){
+    const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); ta.remove();
+  }
+  $("#btnCopy").textContent = "已复制 ✓";
+  setTimeout(()=>{ $("#btnCopy").textContent="复制清单"; }, 1600);
+};
+$("#btnCsv").onclick = () => {
+  const rows=[["机构","实验室官网","团队/学生名单","导师","岗位","方向","核验状态","跟进状态"]];
+  DATA.forEach(o=>{
+    rows.push([o.name,o.lab.url,o.team.url,(o.people||[]).map(p=>p.name).join(" / "),
+      (o.posts||[]).map(p=>POSTS[p].tag+POSTS[p].short).join(" "),
+      (o.dirs||[]).map(d=>DIRS[d].name).join(" / "),VERIFY[o.verify].label,
+      TRACK.find(t=>t.v===trk(o.id)).label]);
+  });
+  rows.push([]);
+  rows.push(["在读学生","英文名","学校","导师","身份","年级","GitHub","邮箱","个人页","在读证据"]);
+  STUDENTS.forEach(s=>{
+    rows.push([s.name,s.en||"",s.school,s.advisor,s.status,s.year||"",s.github||"",s.email||"",s.page||"",s.source]);
+  });
+  const csv="\ufeff"+rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="GPU软件栈sourcing清单.csv"; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+
+/* ---------- init ---------- */
+renderOrgs(); renderStudents(); renderCombos(); renderConfs(); renderContests(); renderOss(); syncChips(); updateStats();
+loadStatus();
+(function(){
+  const h=location.hash.replace("#","");
+  if(POSTS[h]){ state.post=h; syncChips(); renderOrgs(); }
+  else if(DIRS[h]){ state.dir=h; syncChips(); renderOrgs(); }
+  else if(h==="students"){ switchTab("students"); }
+})();
+</script>
+</body>
+</html>
