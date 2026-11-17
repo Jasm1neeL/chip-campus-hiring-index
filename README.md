@@ -7,14 +7,16 @@
 
 ## 一、现在就能用的链接
 
-| 用途 | 地址 |
-|---|---|
-| 本机 | http://127.0.0.1:8000/ |
-| 局域网（同一 WiFi 的手机 / 电脑） | http://<本机 IP>:8000/ |
-| 公网（发给别人，任意网络） | 由 `启动.ps1` 启动后打印，形如 `https://xxx.trycloudflare.com/` |
+| 用途 | 地址 | 状态 |
+|---|---|---|
+| **正式链接（推荐转发）** | https://jasm1neel.github.io/chip-campus-hiring-index/ | 永久固定，国内网络直连可用；学生名录加 `#students` |
+| Cloudflare 镜像（海外 / 代理网络） | https://chip-campus-hiring-index.jasm1neel.workers.dev/ | 已部署成功，但国内网络到 Cloudflare 边缘节点常被阻断，打不开属正常现象 |
+| 本机 | http://127.0.0.1:8000/ | 需先运行 `启动.ps1` |
+| 局域网（同一 WiFi 的手机 / 电脑） | http://<本机 IP>:8000/ | 需先运行 `启动.ps1` |
 
-> 公网链接是「临时隧道」：把本机当成服务器对外暴露，**关掉窗口就失效**，且每次重启地址会变。
-> 需要**永久固定链接**，看下面第四节。
+> 两个线上地址都来自同一个 GitHub 仓库 `Jasm1neeL/chip-campus-hiring-index` 的 `main` 分支。
+> 每次执行 `push-github.ps1` 提交后，**GitHub Pages 与 Cloudflare 会各自自动重新构建发布**，不需要手动上传，也不需要本机开机。
+> 临时隧道 `trycloudflare.com` 已停用 —— 那种地址会随进程回收且无法找回，不要再转发。
 
 ---
 
@@ -64,25 +66,43 @@ powershell -ExecutionPolicy Bypass -File .\启动.ps1
 
 ---
 
-## 四、要一个永久链接怎么做（三选一）
+## 四、永久链接的部署与更新（已配置完成）
 
-### 方案 A：Netlify Drop（最快，1 分钟，免费永久）
-1. 打开 https://app.netlify.com/drop
-2. 把 `index.html` 拖进去
-3. 得到一个 `https://xxxx.netlify.app` 的链接，可直接发给任何人
+### 当前架构
 
-优点：不用注册也能试，注册后可以改名字、绑定自己的域名。
+```
+本地文件  --push-github.ps1-->  GitHub 仓库 main  --+--> GitHub Pages   → jasm1neel.github.io（主用）
+                                                    +--> Cloudflare     → workers.dev 镜像
+```
 
-### 方案 B：Cloudflare Pages（免费，国内访问较快）
-1. 打开 https://dash.cloudflare.com/ → Workers & Pages → Create → Pages → Upload assets
-2. 上传 `index.html`
-3. 得到 `https://xxxx.pages.dev`
+- 仓库：`https://github.com/Jasm1neeL/chip-campus-hiring-index`（Public，`main` 分支）
+- GitHub Pages：仓库 Settings → Pages → Source = `main` / `/root`
+- Cloudflare：Workers & Pages → 已连接同一仓库；**Build command 留空**、Build output directory = `/`
+- 凭据存放在本机 `deploy.config.json`（`githubToken`），**不要提交到仓库**
 
-### 方案 C：放公司内网 / 对象存储
-`index.html` 是纯静态文件，扔到任意静态托管（OSS / COS / Nginx）即可。
-`serve.ps1` 也可以直接跑在任何装了 PowerShell 的 Windows 机器上。
+### 日常更新（唯一需要做的）
 
-> 三种方案都只需上传 `index.html` 一个文件，其它文件与线上无关。
+```powershell
+cd "C:\Users\lixinjie\Documents\默认项目\sourcing-site"
+powershell -ExecutionPolicy Bypass -File .\push-github.ps1 -Message "更新说明"
+```
+
+脚本会把 `index.html` / `refresh-status.json` / `README.md` 提交到 `main`，两个线上地址在 30–60 秒内自动更新。
+站内 `fetch("refresh-status.json")` 用的是相对路径，所以带 `/chip-campus-hiring-index/` 前缀也能正常读到刷新状态。
+
+### 直接传到 Cloudflare（备用，不走 Git）
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1
+```
+
+需要 `deploy.config.json` 里另配 Cloudflare 的 `accountId` + `apiToken`（权限 Account → Cloudflare Pages → Edit）。
+注意：当前项目是 Git 集成的，Cloudflare 不支持把它切回 Direct Upload，所以这个脚本主要用于另建项目/应急。
+
+### 为什么主用 github.io 而不是 Cloudflare
+
+实测本机到 Cloudflare 边缘节点被阻断：`workers.dev` 域名被解析到非 Cloudflare IP，直连正确 IP 会被 reset，`pages.dev` 连接超时；而 `github.io` 稳定 200 / 1–3 秒。
+两边都在自动部署，哪边能打开就用哪边；换网络或挂代理后 Cloudflare 链接可能恢复。
 
 ---
 
@@ -96,6 +116,9 @@ powershell -ExecutionPolicy Bypass -File .\启动.ps1
 | `refresh.ps1` | 自动刷新脚本：重测全部链接，写入 `refresh-status.json` |
 | `refresh-status.json` | 最近一次检测结果（时间、HTTP 状态、耗时、内容哈希、是否变动） |
 | `refresh.log` | 每次检测的明细日志 |
+| `push-github.ps1` | 把站点提交到 GitHub（用 Contents API，本机无需装 Git）；提交后两个线上地址自动更新 |
+| `deploy.ps1` | 备用：走 Cloudflare API 直接上传（需另配 Cloudflare Token） |
+| `deploy.config.json` | 本机凭据（GitHub Token，可选 Cloudflare 配置）；**已排除在发布内容之外** |
 | `README.md` | 本文件 |
 
 ### 每周一 10:00 自动刷新（已配置）
