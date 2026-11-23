@@ -119,9 +119,11 @@ powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 | `push-github.ps1` | 把站点提交到 GitHub（用 Contents API，本机无需装 Git）；提交后两个线上地址自动更新 |
 | `deploy.ps1` | 备用：走 Cloudflare API 直接上传（需另配 Cloudflare Token） |
 | `deploy.config.json` | 本机凭据（GitHub Token，可选 Cloudflare 配置）；**已排除在发布内容之外** |
+| `weekly-update.ps1` | 计划任务入口：先刷新链接状态，再自动提交到 GitHub 发布 |
+| `weekly-update.log` | 每周任务的执行记录 |
 | `README.md` | 本文件 |
 
-### 每周一 10:00 自动刷新（已配置）
+### 每周一 10:00 自动刷新 + 自动发布（已配置）
 
 计划任务名：`GPU-Sourcing-Weekly-Refresh`
 
@@ -138,8 +140,13 @@ Set-ScheduledTask -TaskName "GPU-Sourcing-Weekly-Refresh" -Trigger (New-Schedule
 Unregister-ScheduledTask -TaskName "GPU-Sourcing-Weekly-Refresh" -Confirm:$false
 ```
 
-它会扫描 `index.html` 里全部官网链接（当前 80 条），逐条请求并比对内容哈希，把结果写进 `refresh-status.json`。超时或 5xx 会自动重试一次。
+计划任务实际调用的是 `weekly-update.ps1`，它串起两步：
+
+1. `refresh.ps1`：扫描 `index.html` 里全部官网链接（当前 80 条），逐条请求并比对内容哈希，写入 `refresh-status.json`。超时或 5xx 自动重试一次。
+2. `push-github.ps1`：把新的 `refresh-status.json` 提交到 GitHub，GitHub Pages 与 Cloudflare 收到 push 后自动重新构建，**线上刷新状态随之更新**。
+
 页面右上角显示「上次刷新时间 · 失效 · 超时 · 变动」，每条链接旁有状态点。GitHub 链接因本机网络常被拦截，不计入「超时」数（鼠标悬停可看说明）。
+电脑关机时任务不会执行；但任务设置了「错过计划后尽快运行」，开机联网后会补跑。
 
 ---
 
@@ -153,8 +160,8 @@ Unregister-ScheduledTask -TaskName "GPU-Sourcing-Weekly-Refresh" -Confirm:$false
 1. **每条信息都带原始来源链接**，点开就是官网原文，可追溯、可验证；
 2. **一键站内检索**：`site:官网域名 + 姓名 + 招生`，直接看该导师今年的方向与名额；
 3. **可达性检测**：浏览器实测该域名在你当前网络是否连得上；
-4. **每周一 10:00 自动刷新**：本机计划任务逐条重测官网链接，记录状态、耗时与内容哈希；
-   内容有变化的链接会在页面上标黄点，提示你点开看看；
+4. **每周一 10:00 自动刷新 + 发布**：本机计划任务逐条重测官网链接，记录状态、耗时与内容哈希，
+   并自动提交到 GitHub 让线上站点同步；内容有变化的链接会在页面上标黄点，提示你点开看看；
 5. **数据版本戳**：页面底部写明核验日期。
 
 浏览器有同源策略，网页**不能**直接抓取其它网站的正文。所以「自动刷新」刷新的是**链接可达性与内容变动信号**，
